@@ -214,3 +214,13 @@ h2.section-title::before {
   background: var(--mustard);
   border-radius: 2px;
 }
+
+footer {
+  width: 100%;                 
+  background: var(--dark-brown);
+  color: var(--white);
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  box-sizing: border-box;
+}
