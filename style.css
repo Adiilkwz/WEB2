@@ -83,6 +83,17 @@ header.site-header {
   box-sizing: border-box;
 }
 
+.logo {
+  width: 45px;          /* размер логотипа */
+  height: 45px;
+  border-radius: 50%;   /* делает круглым */
+  object-fit: cover;    /* не растягивает */
+  margin-right: 10px;   /* расстояние между логотипом и текстом */
+  vertical-align: middle;
+  float: left;          /* всегда прижимается к левому краю */
+}
+
+
 .section {
   padding: 2rem;
   margin: 1rem auto;
