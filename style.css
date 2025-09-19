@@ -1,0 +1,216 @@
+/* =========================
+   Step 1: Variables (color palette)
+   ========================= */
+:root {
+  --mustard: #D8A300;
+  --dark-brown: #5C4033;
+  --white: #FFFFFF;
+  --light-mustard: #fff8e1;
+}
+
+/* =========================
+   Step 2: CSS Selectors
+   ========================= */
+
+/* Element selectors */
+h1 {
+  font-size: 2rem;
+  text-align: center;
+  margin: 0;
+}
+p {
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+
+/* Class selector */
+.button-style {
+  background: var(--mustard);
+  color: var(--dark-brown);
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+}
+
+/* ID selector */
+#top-banner {
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--light-mustard);
+  border-bottom: 3px solid var(--mustard);
+}
+
+/* Descendant selector */
+nav.main-nav a {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  border-radius: 4px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* =========================
+   Step 3: Typography
+   ========================= */
+html, body {
+  font-family: "Times New Roman", Times, serif;
+  background: var(--white);
+  color: var(--dark-brown);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+a {
+  color: var(--dark-brown);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+a:hover {
+  color: var(--mustard);
+  text-decoration: underline;
+}
+
+/* =========================
+   Step 4: Colors & Backgrounds
+   ========================= */
+header.site-header {
+  width: 100%;
+  background: var(--dark-brown);
+  color: var(--white);
+  padding: 1rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.section {
+  padding: 2rem;
+  margin: 1rem auto;
+  max-width: 1000px;
+  background: var(--light-mustard);
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+/* =========================
+   Step 5: Layout & Box Model
+   ========================= */
+.section {
+  margin: 1.5rem auto;
+  padding: 2rem;
+  border: 2px solid var(--dark-brown);
+}
+.recipe-card {
+  width: 320px;         /* px */
+  max-width: 90%;       /* % */
+  padding: 1rem;        /* rem */
+  margin: 1rem auto;
+  border: 2px solid var(--dark-brown);
+  border-radius: 8px;
+  background: var(--light-mustard);
+}
+
+/* =========================
+   Step 6: Navigation Menu
+   ========================= */
+nav.main-nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  background: var(--mustard);
+  box-sizing: border-box;
+}
+
+nav.main-nav a:hover {
+  background: var(--dark-brown);
+  color: var(--white);
+}
+nav.main-nav a.active {
+  background: var(--dark-brown);
+  color: var(--mustard);
+}
+
+/* =========================
+   Step 7: Image Styling
+   ========================= */
+img.recipe-thumb {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+img.avatar {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;   /* круглая картинка */
+  border: 3px solid var(--mustard);
+}
+
+/* =========================
+   Step 8: Forms
+   ========================= */
+form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+form label {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"],
+form input[type="file"],
+form select,
+form textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+form textarea {
+  resize: vertical;
+}
+
+.btn-primary {
+  display: inline-block;
+  margin-top: 1rem;
+  background: var(--mustard);
+  color: var(--dark-brown);
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* =========================
+   Step 9: Advanced Styling
+   ========================= */
+h2.section-title {
+  position: relative;
+  padding-bottom: 0.6rem;
+}
+h2.section-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60px;
+  height: 4px;
+  background: var(--mustard);
+  border-radius: 2px;
+}

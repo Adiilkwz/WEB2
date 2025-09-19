@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Recipe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <h1>Nyam-Nyam</h1>
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="search.html">Search</a>
+            <a href="friends.html">Friends</a>
+            <a href="trendy.html">Trendy Recipes</a>
+            <a href="addrecipe.html" class = "active">Add Recipe</a>
+            <a href="account.html">Profile</a>
+</nav>
+
+    </header>
+
+    <main id="top-banner">
+        <section class="recipe-card">
+            <h2 class="section-title">Submit Your Recipe</h2>
+            <form class="recipe-form">
+                <label for="title">Recipe Title:</label><br>
+                <input type="text" id="title" name="title" required><br><br>
+
+                <label for="ingredients">Ingredients:</label><br>
+                <textarea id="ingredients" name="ingredients" rows="6" cols="50" required></textarea><br><br>
+
+                <label for="steps">Instructions:</label><br>
+                <textarea id="steps" name="steps" rows="8" cols="50" required></textarea><br><br>
+
+                <label for="image">Upload Image:</label>
+                <input type="file" id="image" name="image"><br><br>
+
+                <label for="category">Category:</label>
+                <select id="category" name="category">
+                    <option value="breakfast">Breakfast</option>
+                    <option value="lunch">Lunch</option>
+                    <option value="dinner">Dinner</option>
+                    <option value="dessert">Dessert</option>
+                    <option value="drink">Drink</option>
+                </select><br><br>
+
+                <button type="submit" class="btn-primary">Submit Recipe</button>
+            </form>
+        </section>
+    </main>
+    
+    <footer>
+    <p>&copy; 2025 Nyam-Nyam. Adil, Erasyl, Yesbol, Bekarys. All rights reserved</p>
+    </footer>
+</body>
+</html>
