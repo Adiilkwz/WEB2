@@ -1,71 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>User Profile</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <link rel="stylesheet" href="css/account_addrecipe.css">
 </head>
-<body style="background: url('images/cover.jpg') no-repeat center center fixed; background-size: cover;">
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <img src="images/logo.jpg" alt="Nyam-Nyam Logo" class="logo">
+            <h1 class="site-title">Nyam-Nyam</h1>
+        </div>
+        <nav class="main-nav">
+            <div class="nav-inner">
+                <a href="index.html">Home</a>
+                <a href="search.html">Search</a>
+                <a href="friends.html">Friends</a>
+                <a href="trendy.html">Trendy Recipes</a>
+                <a href="addrecipe.html">Add Recipe</a>
+                <a href="account.html" class="active">Profile</a>
+            </div>
+        </nav>
+    </header>
 
-  <!-- Шапка -->
-  <header class="site-header">
-  <img src="images/logo.jpg" alt="Nyam-Nyam Logo" class="logo">
-    <h1>Nyam-Nyam</h1>
-</header>
+    <main>
+        <section class="section">
+            <h2 class="section-title">User Information</h2>
+            <div class="profile-info">
+                <img src="images/profile.jpg" alt="Profile Photo" class="avatar">
+                <p><strong>Name:</strong> John Doe</p>
+                <p><strong>Email:</strong> johndoe@example.com</p>
+                <p><strong>Bio:</strong> I love cooking Italian and Asian food. Sharing recipes is my passion!</p>
+            </div>
+        </section>
 
-  <!-- Навигация -->
-  <nav class="main-nav">
-    <a href="index.html">Home</a>
-    <a href="search.html">Search</a>
-    <a href="friends.html">Friends</a>
-    <a href="trendy.html">Trendy Recipes</a>
-    <a href="addrecipe.html">Add Recipe</a>
-    <a href="account.html" class="active">Profile</a>
-  </nav>
+        <section class="section">
+            <h2 class="section-title">My Favorite Recipes</h2>
+            <ul>
+                <li>Chocolate Cake</li>
+                <li>Pasta Carbonara</li>
+                <li>Chicken Curry</li>
+            </ul>
+        </section>
 
-  <!-- Контент -->
-  <main>
-    <!-- Информация пользователя -->
-    <section class="section">
-      <h2 class="section-title">User Information</h2>
-      <img src="images/profile.jpg" alt="Profile Photo" class="avatar">
-      <p><strong>Name:</strong> Issabay Bekarys</p>
-      <p><strong>Email:</strong> issabaybekarys@gmail.com</p>
-      <p><strong>Bio:</strong> I love cooking Italian and Asian food. Sharing recipes is my passion!</p>
-    </section>
+        <section class="section">
+            <h2 class="section-title">Edit Profile</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
 
-    <!-- Любимые рецепты -->
-    <section class="section recipe-card">
-      <h2 class="section-title">My Favorite Recipes</h2>
-      <ul>
-        <li><a href="recipe1.html">Chocolate Cake</a></li>
-        <li><a href="recipe2.html">Pasta Carbonara</a></li>
-        <li><a href="recipe3.html">Chicken Curry</a></li>
-      </ul>
-    </section>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
 
-    <!-- Редактирование профиля -->
-    <section class="section">
-      <h2 class="section-title">Edit Profile</h2>
-      <form>
-        <label for="username">Name:</label>
-        <input type="text" id="username" name="username">
+                <label for="bio">Bio:</label>
+                <textarea id="bio" name="bio"></textarea>
 
-        <label for="bio">Bio:</label>
-        <textarea id="bio" name="bio" rows="4"></textarea>
+                <button type="submit" class="btn-primary">Save Changes</button>
+            </form>
+        </section>
+    </main>
 
-        <label for="photo">Upload New Photo:</label>
-        <input type="file" id="photo" name="photo">
-
-        <button type="submit" class="btn-primary">Save Changes</button>
-      </form>
-    </section>
-  </main>
-
-  <!-- Подвал -->
-  <footer>
-    <p>&copy; 2025 Nyam-Nyam. Adil, Erasyl, Yesbol, Bekarys. All rights reserved.</p>
-  </footer>
-
+    <footer>
+        <p>&copy; 2025 Nyam-Nyam. Adil, Erasyl, Yesbol, Bekarys. All rights reserved.</p>
+    </footer>
 </body>
 </html>

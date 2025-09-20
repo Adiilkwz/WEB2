@@ -1,0 +1,157 @@
+/* Colors */
+:root {
+  --mustard: #D8A300;
+  --dark-brown: #5C4033;
+  --white: #FFFFFF;
+  --light-mustard: rgba(255,248,225,0.95);
+}
+
+/* Sticky footer layout */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: "Times New Roman", Times, serif;
+  background: url('../images/cover.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: var(--dark-brown);
+}
+
+main {
+  flex: 1;
+}
+
+/* Header */
+header.site-header {
+  background: var(--dark-brown);
+  color: var(--white);
+  padding: 0;
+}
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 20px;
+  position: relative;
+}
+.logo {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 12px;
+}
+.site-title {
+  margin: 0;
+  font-size: 32px;
+  font-weight: bold;
+  color: var(--white);
+}
+
+/* Navigation */
+nav.main-nav {
+  background: var(--mustard);
+}
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  padding: 12px 20px;
+}
+nav.main-nav a {
+  flex: 1;
+  text-align: center;
+  color: var(--dark-brown);
+  text-decoration: none;
+  padding: 12px 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 6px;
+}
+nav.main-nav a:hover {
+  background: var(--dark-brown);
+  color: var(--mustard);
+}
+nav.main-nav a.active {
+  background: var(--dark-brown);
+  color: var(--mustard);
+}
+
+/* Sections */
+.section {
+  background: var(--light-mustard);
+  border: 1px solid rgba(92,64,51,0.6);
+  border-radius: 8px;
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 25px;
+}
+.section-title {
+  margin: 0 0 15px;
+  position: relative;
+  padding-bottom: 10px;
+}
+.section-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60px;
+  height: 4px;
+  background: var(--mustard);
+  border-radius: 2px;
+}
+
+/* Friends list */
+.friends-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.friends-list li {
+  display: flex;
+  align-items: center;
+  margin: 12px 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.friends-list img.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid var(--mustard);
+  margin-right: 12px;
+}
+
+/* Recipe cards (for trendy) */
+.recipe-card {
+  background: #fffbea;
+  border: 1px solid var(--dark-brown);
+  border-radius: 6px;
+  padding: 15px;
+  margin: 15px 0;
+}
+.recipe-card h3 {
+  margin: 10px 0 5px;
+}
+.recipe-card p {
+  margin: 0;
+}
+.recipe-thumb {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  color: var(--white);
+  background: var(--dark-brown);
+  padding: 15px;
+  margin-top: auto;
+}
