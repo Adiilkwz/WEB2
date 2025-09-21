@@ -1,4 +1,8 @@
-/* Colors */
+/* =========================
+   Step 1: External CSS File Linked
+   ========================= */
+
+/* Step 4: Colors (Color Palette Variables) */
 :root {
   --mustard: #D8A300;
   --dark-brown: #5C4033;
@@ -6,23 +10,66 @@
   --light-mustard: rgba(255,248,225,0.95);
 }
 
-/* Sticky footer layout */
+/* =========================
+   Step 2: CSS Selectors
+   ========================= */
+
+/* Element selectors */
 html, body {
   height: 100%;
   margin: 0;
   display: flex;
   flex-direction: column;
-  font-family: "Times New Roman", Times, serif;
-  background: url('../images/cover.jpg') no-repeat center center fixed;
+  font-family: "Times New Roman", Times, serif; /* Step 3: Typography */
+  background: url('../images/cover.jpg') no-repeat center center fixed; /* Step 4: Background Image */
   background-size: cover;
   color: var(--dark-brown);
 }
-
 main {
   flex: 1;
 }
 
-/* Header */
+/* ID selector */
+#main {
+  padding: 20px;
+}
+
+/* Class selectors */
+.section {
+  background: var(--light-mustard);
+  border: 1px solid rgba(92,64,51,0.6);
+  border-radius: 8px;
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 25px;
+}
+
+/* Descendant selectors */
+nav.main-nav a {
+  flex: 1;
+  text-align: center;
+  color: var(--dark-brown);
+  text-decoration: none;
+  padding: 12px 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+/* =========================
+   Step 3: Typography
+   ========================= */
+.site-title {
+  margin: 0;
+  font-size: 32px;
+  font-weight: bold;
+  color: var(--white);
+}
+
+/* =========================
+   Step 4: Colors & Backgrounds
+   ========================= */
 header.site-header {
   background: var(--dark-brown);
   color: var(--white);
@@ -38,64 +85,24 @@ header.site-header {
   position: relative;
 }
 .logo {
+  /* Step 7: Image Styling */
   width: 55px;
   height: 55px;
-  border-radius: 50%;
+  border-radius: 50%; /* circle */
   object-fit: cover;
   margin-right: 12px;
 }
-.site-title {
-  margin: 0;
-  font-size: 32px;
-  font-weight: bold;
-  color: var(--white);
-}
 
-/* Navigation */
-nav.main-nav {
-  background: var(--mustard);
-}
-.nav-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-around;
-  padding: 12px 20px;
-}
-nav.main-nav a {
-  flex: 1;
-  text-align: center;
-  color: var(--dark-brown);
-  text-decoration: none;
-  padding: 12px 0;
-  font-size: 1.2rem;
-  font-weight: 600;
-  border-radius: 6px;
-}
-nav.main-nav a:hover {
-  background: var(--dark-brown);
-  color: var(--mustard);
-}
-nav.main-nav a.active {
-  background: var(--dark-brown);
-  color: var(--mustard);
-}
-
-/* Sections */
-.section {
-  background: var(--light-mustard);
-  border: 1px solid rgba(92,64,51,0.6);
-  border-radius: 8px;
-  max-width: 900px;
-  margin: 30px auto;
-  padding: 25px;
-}
+/* =========================
+   Step 5: Layout & Box Model
+   ========================= */
 .section-title {
   margin: 0 0 15px;
   position: relative;
   padding-bottom: 10px;
 }
 .section-title::before {
+  /* Step 9: Advanced Styling (Pseudo-element) */
   content: "";
   position: absolute;
   left: 0;
@@ -106,7 +113,47 @@ nav.main-nav a.active {
   border-radius: 2px;
 }
 
-/* Friends list */
+/* =========================
+   Step 6: Navigation Menu
+   ========================= */
+nav.main-nav {
+  background: var(--mustard);
+}
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  padding: 12px 20px;
+}
+nav.main-nav a:hover {
+  background: var(--dark-brown);
+  color: var(--mustard);
+}
+nav.main-nav a.active {
+  background: var(--dark-brown);
+  color: var(--mustard);
+}
+
+/* =========================
+   Step 7: Image Styling
+   ========================= */
+.friends-list img.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* circle */
+  border: 2px solid var(--mustard);
+  margin-right: 12px;
+}
+.recipe-thumb {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+/* =========================
+   Step 5: Friends List Layout
+   ========================= */
 .friends-list {
   list-style: none;
   padding: 0;
@@ -119,15 +166,10 @@ nav.main-nav a.active {
   font-size: 1.1rem;
   font-weight: 500;
 }
-.friends-list img.avatar {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 2px solid var(--mustard);
-  margin-right: 12px;
-}
 
-/* Recipe cards (for trendy) */
+/* =========================
+   Step 5: Recipe Cards (Box Model)
+   ========================= */
 .recipe-card {
   background: #fffbea;
   border: 1px solid var(--dark-brown);
@@ -141,13 +183,10 @@ nav.main-nav a.active {
 .recipe-card p {
   margin: 0;
 }
-.recipe-thumb {
-  width: 100%;
-  border-radius: 6px;
-  margin-bottom: 10px;
-}
 
-/* Footer */
+/* =========================
+   Step 5: Footer
+   ========================= */
 footer {
   text-align: center;
   color: var(--white);
