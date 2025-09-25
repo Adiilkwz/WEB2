@@ -1,9 +1,8 @@
 /* =========================
    Step 1: External CSS File Linked
    ========================= */
-
-/* Step 4: Colors (Color Palette Variables) */
 :root {
+  /* Step 4: Colors (Color Palette Variables) */
   --mustard: #D8A300;
   --dark-brown: #5C4033;
   --white: #FFFFFF;
@@ -17,7 +16,7 @@
 /* Element selectors */
 html, body {
   font-family: "Times New Roman", Times, serif; /* Step 3: Typography */
-  background: url("../images/cover.jpg") no-repeat center center fixed; /* Step 4: Background Image */
+  background: url('../images/cover.jpg') no-repeat center center fixed; /* Step 4: Background Image */
   background-size: cover;
   margin: 0;
   padding: 0;
@@ -31,32 +30,37 @@ main {
   flex: 1;
 }
 
-/* ID selector (Step 2 requirement) */
+/* ID selector */
 #main {
   padding: 20px;
 }
 
 /* Class selectors */
-.section, .recipe-card {
+.form-card {
   background: var(--light-mustard);
   border: 1px solid rgba(92,64,51,0.6);
   border-radius: 8px;
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 20px;
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 25px;
 }
 
 /* Descendant selectors */
 nav.main-nav a {
-  flex: 1;
-  text-align: center;
-  font-size: 1.2rem;
-  font-weight: 600;
-  padding: 10px 0;
   color: var(--dark-brown);
   text-decoration: none;
+  padding: 10px 16px;
+  font-size: 1.2rem;
+  font-weight: 600;
   border-radius: 6px;
-  transition: background 0.18s ease, color 0.18s ease;
+}
+nav.main-nav a:hover {
+  background: var(--dark-brown);
+  color: var(--mustard);
+}
+nav.main-nav a.active {
+  background: var(--dark-brown);
+  color: var(--mustard);
 }
 
 /* =========================
@@ -66,7 +70,6 @@ nav.main-nav a {
   margin: 0;
   font-size: 32px;
   font-weight: bold;
-  line-height: 1;
   color: var(--white);
 }
 
@@ -82,8 +85,8 @@ header.site-header {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  align-items: center;      /* vertical center */
-  justify-content: center;  /* horizontal center */
+  align-items: center;
+  justify-content: center;
   padding: 15px 20px;
   position: relative;
 }
@@ -91,7 +94,7 @@ header.site-header {
   /* Step 7: Image Styling */
   width: 55px;
   height: 55px;
-  border-radius: 50%; /* circle */
+  border-radius: 50%;
   object-fit: cover;
   margin-right: 12px;
 }
@@ -100,55 +103,22 @@ header.site-header {
    Step 5: Layout & Box Model
    ========================= */
 .section-title {
-  margin: 0 0 10px;
+  margin: 0 0 15px;
+  text-align: center;
   position: relative;
-  padding-bottom: 8px;
+  padding-bottom: 10px;
 }
 .section-title::before {
-  /* Step 9: Advanced Styling (Pseudo-element) */
+  /* Step 9: Advanced Styling with Pseudo-element */
   content: "";
   position: absolute;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   bottom: 0;
-  width: 50px;
+  width: 60px;
   height: 4px;
   background: var(--mustard);
   border-radius: 2px;
-}
-
-/* =========================
-   Step 6: Navigation Menu
-   ========================= */
-nav.main-nav {
-  background: var(--mustard);
-  width: 100%;
-}
-.nav-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 25px;
-}
-nav.main-nav a:hover {
-  background: var(--dark-brown);
-  color: var(--mustard);
-}
-nav.main-nav a.active {
-  background: var(--dark-brown);
-  color: var(--mustard);
-}
-
-/* =========================
-   Step 7: Image Styling
-   ========================= */
-.avatar {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  border: 3px solid var(--mustard);
-  margin-bottom: 7px;
 }
 
 /* =========================
@@ -159,37 +129,30 @@ form label {
   margin-top: 12px;
   font-weight: bold;
 }
-form input, form textarea, form select {
-  width: 100%;
-  padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-family: inherit;
-  margin-top: 6px;
-}
 form input[type="text"],
-form input[type="password"],
 form input[type="email"],
-form input[type="file"],
-form select,
-form textarea {
-  width: 100%;
-  max-width: 800px;
+form input[type="password"] {
+  width: 96%;
+  max-width: 450px;
+  margin: 6px auto 15px auto;
   display: block;
-  margin: 0 auto 15px auto;
   padding: 10px;
-  border: 1px solid #ccc;
   border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #fffbea;
   font-family: inherit;
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 .btn-primary {
+  display: block;
+  width: 100%;
   margin-top: 16px;
   background: var(--mustard);
   color: var(--dark-brown);
   border: none;
   border-radius: 6px;
-  padding: 10px 18px;
+  padding: 12px;
+  font-size: 1rem;
   cursor: pointer;
   transition: background 0.2s ease; /* Step 9: Transition */
 }
@@ -197,11 +160,33 @@ form textarea {
   background: #c49700;
 }
 
+/* Descendant selector again for links inside form notes */
+.form-note {
+  margin-top: 15px;
+  text-align: center;
+}
+.form-note a {
+  color: var(--dark-brown);
+  font-weight: bold;
+  text-decoration: none;
+}
+.form-note a:hover {
+  color: var(--mustard);
+  text-decoration: underline;
+}
+
 /* =========================
-   Step 5: Profile Page Specific
+   Step 6 & 9: Navigation + Transitions
    ========================= */
-.profile-info {
-  text-align: left;
+nav.main-nav {
+  background: var(--mustard);
+}
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  padding: 12px 20px;
 }
 
 /* =========================
