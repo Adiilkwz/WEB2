@@ -56,14 +56,7 @@ nav.main-nav a {
   border-radius: 6px;
   transition: background 0.18s ease, color 0.18s ease;
 }
-nav.main-nav a:hover {
-  background: var(--dark-brown);
-  color: var(--mustard);
-}
-nav.main-nav a.active {
-  background: var(--dark-brown);
-  color: var(--mustard);
-}
+
 /* =========================
    Step 3: Typography
    ========================= */
@@ -86,23 +79,26 @@ header.site-header {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: center;    
+  justify-content: space-between; 
   padding: 15px 20px;
+  gap: 40px;
   position: relative;
 }
-.logo {
-  /* Step 7: Image Styling */
-  width: 55px;
-  height: 55px;
-  border-radius: 50%; /* circle */
-  object-fit: cover;
-  margin-right: 12px;
+
+.brand {
+  display: flex;
+  align-items: center;     
 }
 
-/* =========================
-   Step 5: Layout & Box Model
-   ========================= */
+.logo {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
 .section-title {
   margin: 0 0 15px;
   position: relative;
@@ -119,32 +115,34 @@ header.site-header {
   background: var(--mustard);
   border-radius: 2px;
 }
-
-/* =========================
-   Step 6: Navigation Menu
-   ========================= */
-nav.main-nav {
-  background: var(--mustard);
-}
 .nav-inner {
-  max-width: 1200px;
-  margin: 0 auto;
   display: flex;
-  justify-content: space-around;
-  padding: 12px 20px;
+  align-items: center;      
+  gap: 20px;
 }
-nav.main-nav a:hover {
-  background: var(--dark-brown);
-  color: var(--mustard);
+nav.main-nav a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;      
+  height: 40px;
+  padding: 0 16px;
+  text-decoration: none;
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: background 0.18s ease, color 0.18s ease;
 }
+nav.main-nav a:hover,
 nav.main-nav a.active {
-  background: var(--dark-brown);
-  color: var(--mustard);
+  background: var(--mustard);
+  color: var(--dark-brown);
 }
-
 /* =========================
-   Step 5: Recipe Cards (Box Model)
+   Step 5: Layout & Box Model
    ========================= */
+
 .recipe-card {
   background: #fffbea;
   border: 1px solid var(--dark-brown);
@@ -188,13 +186,100 @@ nav.main-nav a.active {
   background: #c49700;
 }
 
-/* =========================
-   Step 5: Footer
-   ========================= */
 footer {
   text-align: center;
   color: var(--white);
   background: var(--dark-brown);
   padding: 15px;
   margin-top: auto;
+}
+/* =========================
+   Step X: Card Row
+   ========================= */
+.card-row {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.recipe-card {
+  flex: 1;
+  min-width: 250px;
+  background: #fffbea;
+  border: 1px solid var(--dark-brown);
+  border-radius: 6px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.recipe-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.recipe-card button {
+  margin-top: auto;
+}
+
+.recipe-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+/* =========================
+   Step X: Card Row (Task 2)
+   ========================= */
+.card-row {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap; 
+}
+
+.recipe-card {
+  flex: 1;
+  min-width: 250px;
+  max-width: 300px;
+  background: #fffbea;
+  border: 1px solid var(--dark-brown);
+  border-radius: 6px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.recipe-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.recipe-card h3 {
+  margin: 10px 0;
+  font-size: 1.3rem;
+  color: var(--dark-brown);
+}
+
+.recipe-card p {
+  flex-grow: 1; 
+  margin-bottom: 12px;
+}
+
+.recipe-card button {
+  margin-top: auto; 
+}
+
+.recipe-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
