@@ -1,8 +1,8 @@
 /* =========================
    Step 1: External CSS File Linked
    ========================= */
+/* Step 4: Colors (Color Palette Variables) */
 :root {
-  /* Step 4: Colors (Color Palette Variables) */
   --mustard: #D8A300;
   --dark-brown: #5C4033;
   --white: #FFFFFF;
@@ -16,51 +16,21 @@
 /* Element selectors */
 html, body {
   font-family: "Times New Roman", Times, serif; /* Step 3: Typography */
-  background: url('../images/cover.jpg') no-repeat center center fixed; /* Step 4: Background Image */
+  background: url("../images/cover.jpg") no-repeat center center fixed; /* Step 4: Background Image */
   background-size: cover;
   margin: 0;
   padding: 0;
   color: var(--dark-brown);
   min-height: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
 }
+
 main {
   flex: 1;
 }
-
-/* ID selector */
 #main {
   padding: 20px;
-}
-
-/* Class selectors */
-.form-card {
-  background: var(--light-mustard);
-  border: 1px solid rgba(92,64,51,0.6);
-  border-radius: 8px;
-  max-width: 500px;
-  margin: 50px auto;
-  padding: 25px;
-}
-
-/* Descendant selectors */
-nav.main-nav a {
-  color: var(--dark-brown);
-  text-decoration: none;
-  padding: 10px 16px;
-  font-size: 1.2rem;
-  font-weight: 600;
-  border-radius: 6px;
-}
-nav.main-nav a:hover {
-  background: var(--dark-brown);
-  color: var(--mustard);
-}
-nav.main-nav a.active {
-  background: var(--dark-brown);
-  color: var(--mustard);
 }
 
 /* =========================
@@ -70,6 +40,7 @@ nav.main-nav a.active {
   margin: 0;
   font-size: 32px;
   font-weight: bold;
+  line-height: 1;
   color: var(--white);
 }
 
@@ -86,44 +57,98 @@ header.site-header {
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   padding: 15px 20px;
+  gap: 40px;
   position: relative;
 }
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+
 .logo {
-  /* Step 7: Image Styling */
   width: 55px;
   height: 55px;
   border-radius: 50%;
   object-fit: cover;
-  margin-right: 12px;
+  margin-right: 10px;
 }
 
 /* =========================
    Step 5: Layout & Box Model
    ========================= */
+section {
+  background: rgba(255, 248, 225, 0.95); 
+  border: 2px solid var(--dark-brown);
+  border-radius: 8px;
+  padding: 25px;
+  margin: 30px auto;
+  max-width: 1000px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+}
+
+/* Section titles */
 .section-title {
-  margin: 0 0 15px;
-  text-align: center;
+  margin: 0 0 10px;
   position: relative;
-  padding-bottom: 10px;
+  padding-bottom: 8px;
+  font-size: 24px;
+  text-align: center;
 }
 .section-title::before {
-  /* Step 9: Advanced Styling with Pseudo-element */
+  /* Step 9: Advanced Styling (Pseudo-element) */
   content: "";
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   bottom: 0;
-  width: 60px;
+  width: 50px;
   height: 4px;
   background: var(--mustard);
   border-radius: 2px;
 }
+nav.main-nav {
+  background: none;
+}
+.nav-inner {
+  display: flex;
+  align-items: center;      
+  gap: 20px;
+}
 
+nav.main-nav a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;      
+  height: 40px;
+  padding: 0 16px;
+  text-decoration: none;
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+nav.main-nav a:hover,
+nav.main-nav a.active {
+  background: var(--mustard);
+  color: var(--dark-brown);
+}
 /* =========================
-   Step 8: HTML Forms
+   Forms
    ========================= */
+.form-card {
+  background: var(--light-mustard);
+  border: 2px solid rgba(92,64,51,0.4);
+  border-radius: 10px;
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 25px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
 form label {
   display: block;
   margin-top: 12px;
@@ -141,7 +166,6 @@ form input[type="password"] {
   border: 1px solid #ccc;
   background: #fffbea;
   font-family: inherit;
-  box-sizing: border-box;
 }
 .btn-primary {
   display: block;
@@ -153,14 +177,15 @@ form input[type="password"] {
   border-radius: 6px;
   padding: 12px;
   font-size: 1rem;
+  font-weight: bold;
   cursor: pointer;
-  transition: background 0.2s ease; /* Step 9: Transition */
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.25s ease;
 }
 .btn-primary:hover {
-  background: #c49700;
+  background: var(--dark-brown);
+  color: var(--mustard);
+  transform: scale(1.05);
 }
-
-/* Descendant selector again for links inside form notes */
 .form-note {
   margin-top: 15px;
   text-align: center;
@@ -176,21 +201,59 @@ form input[type="password"] {
 }
 
 /* =========================
-   Step 6 & 9: Navigation + Transitions
+   Flexbox Cards 
    ========================= */
-nav.main-nav {
-  background: var(--mustard);
-}
-.nav-inner {
-  max-width: 1200px;
-  margin: 0 auto;
+.card-row {
   display: flex;
-  justify-content: space-around;
-  padding: 12px 20px;
+  gap: 20px;
+  justify-content: center;
+  margin: 30px auto;
+  max-width: 1000px;
 }
+.card {
+  flex: 1;
+  max-width: 300px;
+  background: var(--light-mustard);
+  border: 2px solid var(--dark-brown);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+}
+/* =========================
+   Grid Layout 
+   ========================= */
+.page-grid {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: auto 1fr auto;
+  min-height: 400px;
+  margin: 40px auto;
+  max-width: 1000px;
+  gap: 15px;
+}
+.page-grid > div {
+  background: var(--light-mustard);
+  border: 1px solid var(--dark-brown);
+  border-radius: 8px;
+  padding: 15px;
+}
+.header { grid-area: header; }
+.sidebar { grid-area: sidebar; }
+.main { grid-area: main; }
+.footer { grid-area: footer; }
+
 
 /* =========================
-   Step 5: Footer
+   Footer
    ========================= */
 footer {
   text-align: center;

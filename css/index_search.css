@@ -56,7 +56,14 @@ nav.main-nav a {
   border-radius: 6px;
   transition: background 0.18s ease, color 0.18s ease;
 }
-
+nav.main-nav a:hover {
+  background: var(--dark-brown);
+  color: var(--mustard);
+}
+nav.main-nav a.active {
+  background: var(--dark-brown);
+  color: var(--mustard);
+}
 /* =========================
    Step 3: Typography
    ========================= */

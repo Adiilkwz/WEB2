@@ -8,6 +8,7 @@
 <body>
     <header class="site-header">
         <div class="header-inner">
+            <div class = "brand">
             <img src="images/logo.jpg" alt="Nyam-Nyam Logo" class="logo">
             <h1 class="site-title">Nyam-Nyam</h1>
         </div>
@@ -24,35 +25,36 @@
         </nav>
     </header>
 
-    <main id = "main">
-        <section class="recipe-card">
-            <h2 class="section-title">Submit Your Recipe</h2>
-            <form class="recipe-form">
-                <label for="title">Recipe Title:</label>
-                <input type="text" id="title" name="title" required>
+    <main id="main">
+    <section class="recipe-card">
+        <h2 class="section-title">Submit Your Recipe</h2>
+        <form class="recipe-form">
+            <label for="title">Recipe Title:</label>
+            <input type="text" id="title" name="title" required>
 
-                <label for="ingredients">Ingredients:</label>
-                <textarea id="ingredients" name="ingredients" rows="6" required></textarea>
+            <label for="ingredients">Ingredients:</label>
+            <textarea id="ingredients" name="ingredients" rows="6" required></textarea>
 
-                <label for="steps">Instructions:</label>
-                <textarea id="steps" name="steps" rows="8" required></textarea>
+            <label for="steps">Instructions:</label>
+            <textarea id="steps" name="steps" rows="8" required></textarea>
 
-                <label for="image">Upload Image:</label>
-                <input type="file" id="image" name="image">
+            <label for="image">Upload Image:</label>
+            <input type="file" id="image" name="image">
 
-                <label for="category">Category:</label>
-                <select id="category" name="category">
-                    <option value="breakfast">Breakfast</option>
-                    <option value="lunch">Lunch</option>
-                    <option value="dinner">Dinner</option>
-                    <option value="dessert">Dessert</option>
-                    <option value="drink">Drink</option>
-                </select>
+            <label for="category">Category:</label>
+            <select id="category" name="category">
+                <option value="breakfast">Breakfast</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+                <option value="dessert">Dessert</option>
+                <option value="drink">Drink</option>
+            </select>
 
-                <button type="submit" class="btn-primary">Submit Recipe</button>
-            </form>
-        </section>
+            <button type="submit" class="btn-primary">Submit Recipe</button>
+        </form>
+    </section>
     </main>
+
 
     <footer>
         <p>&copy; 2025 Nyam-Nyam. Adil, Erasyl, Yesbol, Bekarys. All rights reserved.</p>

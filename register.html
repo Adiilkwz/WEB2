@@ -6,25 +6,29 @@
     <link rel="stylesheet" href="css/login_register.css">
 </head>
 <body>
+    <!-- Header -->
     <header class="site-header">
         <div class="header-inner">
-            <img src="images/logo.jpg" alt="Nyam-Nyam Logo" class="logo">
-            <h1 class="site-title">Nyam-Nyam</h1>
-        </div>
-        <nav class="main-nav">
-            <div class="nav-inner">
-                <a href="index.html">Home</a>
-                <a href="search.html">Search</a>
-                <a href="friends.html">Friends</a>
-                <a href="trendy.html">Trendy Recipes</a>
-                <a href="addrecipe.html">Add Recipe</a>
-                <a href="account.html">Profile</a>
-                <a href="register.html" class="active">Register</a>
+            <div class="brand">
+                <img src="images/logo.jpg" alt="Nyam-Nyam Logo" class="logo">
+                <h1 class="site-title">Nyam-Nyam</h1>
             </div>
-        </nav>
+            <nav class="main-nav">
+                <div class="nav-inner">
+                    <a href="index.html">Home</a>
+                    <a href="search.html">Search</a>
+                    <a href="friends.html">Friends</a>
+                    <a href="trendy.html">Trendy Recipes</a>
+                    <a href="addrecipe.html">Add Recipe</a>
+                    <a href="account.html">Profile</a>
+                    <a href="register.html" class="active">Register</a>
+                </div>
+            </nav>
+        </div>
     </header>
 
-    <main id = "main">
+    <main id="main">
+        <!-- Register Form -->
         <section class="form-card">
             <h2 class="section-title">Create Account</h2>
             <form>
@@ -40,12 +44,43 @@
                 <label for="confirm">Confirm Password:</label>
                 <input type="password" id="confirm" name="confirm" placeholder="Confirm your password" required>
 
-                <button type="submit" class="btn-primary" onclick = "window.location.href = 'index.html'">Register</button>
+                <button type="submit" class="btn-primary" onclick="window.location.href='index.html'">Register</button>
             </form>
             <p class="form-note">Already have an account? <a href="login.html">Login here</a></p>
         </section>
+
+        <!-- Flexbox Cards -->
+        <section>
+            <h2 class="section-title">Why Join Nyam-Nyam?</h2>
+            <div class="card-row">
+                <div class="card">
+                    <h3>Share Recipes</h3>
+                    <p>Create your own recipe posts and inspire others.</p>
+                </div>
+                <div class="card">
+                    <h3>Connect with Friends</h3>
+                    <p>Follow other food lovers and share your favorites.</p>
+                </div>
+                <div class="card">
+                    <h3>Discover Trends</h3>
+                    <p>Explore trending recipes from around the world.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Grid Layout -->
+        <section>
+            <h2 class="section-title">Community Layout (Grid)</h2>
+            <div class="page-grid">
+                <div class="header">Header</div>
+                <div class="sidebar">Sidebar (profile, groups)</div>
+                <div class="main">Main Content (community feed)</div>
+                <div class="footer">Footer</div>
+            </div>
+        </section>
     </main>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2025 Nyam-Nyam. Adil, Yerassyl, Yesbol, Bekarys. All rights reserved.</p>
     </footer>

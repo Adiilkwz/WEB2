@@ -1,7 +1,3 @@
-/* =========================
-   Step 1: External CSS File Linked
-   ========================= */
-
 /* Step 4: Colors (Color Palette Variables) */
 :root {
   --mustard: #D8A300;
@@ -9,7 +5,6 @@
   --white: #FFFFFF;
   --light-mustard: rgba(255,248,225,0.95);
 }
-
 /* =========================
    Step 2: CSS Selectors
    ========================= */
@@ -46,19 +41,6 @@ main {
   padding: 20px;
 }
 
-/* Descendant selectors */
-nav.main-nav a {
-  flex: 1;
-  text-align: center;
-  font-size: 1.2rem;
-  font-weight: 600;
-  padding: 10px 0;
-  color: var(--dark-brown);
-  text-decoration: none;
-  border-radius: 6px;
-  transition: background 0.18s ease, color 0.18s ease;
-}
-
 /* =========================
    Step 3: Typography
    ========================= */
@@ -82,18 +64,24 @@ header.site-header {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  align-items: center;      /* vertical center */
-  justify-content: center;  /* horizontal center */
+  align-items: center;
+  justify-content: space-between;
   padding: 15px 20px;
+  gap: 40px;
   position: relative;
 }
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+
 .logo {
-  /* Step 7: Image Styling */
   width: 55px;
   height: 55px;
-  border-radius: 50%; /* circle */
+  border-radius: 50%;
   object-fit: cover;
-  margin-right: 12px;
+  margin-right: 10px;
 }
 
 /* =========================
@@ -120,26 +108,33 @@ header.site-header {
    Step 6: Navigation Menu
    ========================= */
 nav.main-nav {
-  background: var(--mustard);
-  width: 100%;
+  background: none;
 }
 .nav-inner {
-  max-width: 1200px;
-  margin: 0 auto;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 25px;
-}
-nav.main-nav a:hover {
-  background: var(--dark-brown);
-  color: var(--mustard);
-}
-nav.main-nav a.active {
-  background: var(--dark-brown);
-  color: var(--mustard);
+  align-items: center;      
+  gap: 20px;
 }
 
+nav.main-nav a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;      
+  height: 40px;
+  padding: 0 16px;
+  text-decoration: none;
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+nav.main-nav a:hover,
+nav.main-nav a.active {
+  background: var(--mustard);
+  color: var(--dark-brown);
+}
 /* =========================
    Step 7: Image Styling
    ========================= */
@@ -183,19 +178,6 @@ form textarea {
   font-family: inherit;
   box-sizing: border-box; 
 }
-.btn-primary {
-  margin-top: 16px;
-  background: var(--mustard);
-  color: var(--dark-brown);
-  border: none;
-  border-radius: 6px;
-  padding: 10px 18px;
-  cursor: pointer;
-  transition: background 0.2s ease; /* Step 9: Transition */
-}
-.btn-primary:hover {
-  background: #c49700;
-}
 
 /* =========================
    Step 5: Profile Page Specific
@@ -203,7 +185,63 @@ form textarea {
 .profile-info {
   text-align: left;
 }
+/* =========================
+   My Favorite Recipes Buttons
+   ========================= */
+.btn-primary{
+  display: inline-block;
+  background: var(--mustard);
+  color: var(--dark-brown);
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
 
+.btn-primary:hover {
+  background: var(--dark-brown);
+  color: var(--mustard);
+  transform: scale(1.05);
+}
+/* =========================
+   Favorite Recipes Card Row
+   ========================= */
+.card-row {
+  display: flex;
+  justify-content: space-between; 
+  gap: 20px; 
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #fffbea;
+  border: 1px solid var(--dark-brown);
+  border-radius: 8px;
+  padding: 15px;
+  flex: 1;
+  min-width: 200px;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
 /* =========================
    Step 5: Footer
    ========================= */
