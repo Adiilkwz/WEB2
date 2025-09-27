@@ -8,20 +8,21 @@
 <body>
     <header class="site-header">
         <div class="header-inner">
-            <img src="images/logo.jpg" alt="Nyam-Nyam Logo" class="logo">
-            <h1 class="site-title">Nyam-Nyam</h1>
-        </div>
-        <nav class="main-nav">
-            <div class="nav-inner">
-                <a href="index.html" class="active">Home</a>
-                <a href="search.html">Search</a>
-                <a href="friends.html">Friends</a>
-                <a href="trendy.html">Trendy Recipes</a>
-                <a href="addrecipe.html">Add Recipe</a>
-                <a href="account.html">Profile</a>
-                <a href="login.html">Login</a>
+            <div class="brand">
+                <img src="images/logo.jpg" alt="Nyam-Nyam Logo" class="logo">
+                <h1 class="site-title">Nyam-Nyam</h1>
             </div>
-        </nav>
+            <nav class="main-nav">
+                <div class="nav-inner">
+                    <a href="index.html"class="active">Home</a>
+                    <a href="search.html">Search</a>
+                    <a href="friends.html" >Friends</a>
+                    <a href="trendy.html">Trendy Recipes</a>
+                    <a href="addrecipe.html">Add Recipe</a>
+                    <a href="account.html">Profile</a>
+                </div>
+            </nav>
+        </div>
     </header>
 
     <main id = "main">
@@ -30,17 +31,33 @@
             <p>Discover, share, and enjoy recipes from around the world. Join our community to explore new tastes and inspire others with your cooking.</p>
         </section>
 
-        <section class="section">
-            <h2 class="section-title">Featured Recipes</h2>
-            <div class="recipe-card">
-                <h3>Classic Lasagna</h3>
-                <p>A delicious Italian dish with layers of pasta, meat, and cheese.</p>
-            </div>
-            <div class="recipe-card">
-                <h3>Chocolate Brownies</h3>
-                <p>Rich and fudgy brownies, perfect with a cup of coffee.</p>
-            </div>
-        </section>
+       <section class="section">
+  <h2 class="section-title">Featured Recipes</h2>
+  
+  <div class="card-row">
+    <div class="recipe-card">
+      <img src="images/lasagna.jpg" alt="Classic Lasagna">
+      <h3>Classic Lasagna</h3>
+      <p>A delicious Italian dish with layers of pasta, meat, and cheese.</p>
+      <button class="btn-primary">View Recipe</button>
+    </div>
+
+    <div class="recipe-card">
+      <img src="images/brownies.jpg" alt="Chocolate Brownies">
+      <h3>Chocolate Brownies</h3>
+      <p>Rich and fudgy brownies, perfect with a cup of coffee.</p>
+      <button class="btn-primary">View Recipe</button>
+    </div>
+
+    <div class="recipe-card">
+      <img src="images/salad.jpg" alt="Fresh Salad">
+      <h3>Fresh Salad</h3>
+      <p>A healthy mix of greens, tomatoes, and cucumber with olive oil.</p>
+      <button class="btn-primary">View Recipe</button>
+    </div>
+  </div>
+</section>
+
     </main>
 
     <footer>
