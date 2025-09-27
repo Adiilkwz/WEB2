@@ -3,37 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <title>Friends - Nyam-Nyam</title>
-    <link rel="stylesheet" href="css/friends_trendy.css">
+    <link rel="stylesheet" href="friends_trendy.css">
 </head>
 <body>
     <header class="site-header">
         <div class="header-inner">
-            <img src="images/logo.jpg" alt="Nyam-Nyam Logo" class="logo">
-            <h1 class="site-title">Nyam-Nyam</h1>
-        </div>
-        <nav class="main-nav">
-            <div class="nav-inner">
-                <a href="index.html">Home</a>
-                <a href="search.html">Search</a>
-                <a href="friends.html" class="active">Friends</a>
-                <a href="trendy.html">Trendy Recipes</a>
-                <a href="addrecipe.html">Add Recipe</a>
-                <a href="account.html">Profile</a>
-                <a href="login.html">Login</a>
+            <div class="brand">
+                <img src="images/logo.jpg" alt="Nyam-Nyam Logo" class="logo">
+                <h1 class="site-title">Nyam-Nyam</h1>
             </div>
-        </nav>
+            <nav class="main-nav">
+                <div class="nav-inner">
+                    <a href="index.html">Home</a>
+                    <a href="search.html">Search</a>
+                    <a href="friends.html" class="active">Friends</a>
+                    <a href="trendy.html">Trendy Recipes</a>
+                    <a href="addrecipe.html">Add Recipe</a>
+                    <a href="account.html">Profile</a>
+                </div>
+            </nav>
+        </div>
     </header>
 
-    <main id = "main">
+<main id="main">
+    <div class="friends-sections">
+        <!-- My Friends -->
         <section class="section">
             <h2 class="section-title">My Friends</h2>
             <ul class="friends-list">
-                <li><img src="images/women1.jpg" class="avatar"> <span>Anna Smith</span></li>
-                <li><img src="images/man1.jpg" class="avatar"> <span>Michael Brown</span></li>
-                <li><img src="images/women2.jpg" class="avatar"> <span>Sara Lee</span></li>
+                <li><img src="images/women1.jpg" class="avatar"> <span>Anna Smith</span> <button class="delete-btn">Delete</button></li>
+                <li><img src="images/man1.jpg" class="avatar"> <span>Adil Ramazan</span> <button class="delete-btn">Delete</button></li>
+                <li><img src="images/women2.jpg" class="avatar"> <span>Sara Lee</span> <button class="delete-btn">Delete</button></li>
             </ul>
         </section>
-    </main>
+
+        <!-- Add Friends -->
+        <section class="section">
+            <h2 class="section-title">Add Friends</h2>
+            <form class="friend-search">
+                <input type="text" placeholder="Search friends..." class="search-input">
+                <button type="submit" class="search-btn">Search</button>
+            </form>
+        </section>
+
+        <!-- Suggested Friends -->
+        <section class="section">
+            <h2 class="section-title">Suggested Friends</h2>
+            <ul class="friends-list">
+                <li><img src="images/women4.jpg" class="avatar"> <span>Olivia Wilson</span> <button class="add-btn">Add</button></li>
+                <li><img src="images/man3.jpg" class="avatar"> <span>Yerassyl Kuansyhov</span> <button class="add-btn">Add</button></li>
+            </ul>
+        </section>
+    </div>
+</main>
 
     <footer>
         <p>&copy; 2025 Nyam-Nyam. Adil, Yerassyl, Yesbol, Bekarys. All rights reserved.</p>

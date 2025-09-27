@@ -1,6 +1,4 @@
-/* =========================
-   Step 1: External CSS File Linked
-   ========================= */
+/* Step 1: External CSS File Linked*/
 
 /* Step 4: Colors (Color Palette Variables) */
 :root {
@@ -10,9 +8,7 @@
   --light-mustard: rgba(255,248,225,0.95);
 }
 
-/* =========================
-   Step 2: CSS Selectors
-   ========================= */
+/* Step 2: CSS Selectors*/
 
 /* Element selectors */
 html, body {
@@ -20,8 +16,8 @@ html, body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  font-family: "Times New Roman", Times, serif; /* Step 3: Typography */
-  background: url('../images/cover.jpg') no-repeat center center fixed; /* Step 4: Background Image */
+  font-family: "Times New Roman", Times, serif; 
+  background: url('../images/cover.jpg') no-repeat center center fixed; 
   background-size: cover;
   color: var(--dark-brown);
 }
@@ -43,74 +39,14 @@ main {
   margin: 30px auto;
   padding: 25px;
 }
-
-/* Descendant selectors */
-nav.main-nav a {
-  flex: 1;
-  text-align: center;
-  color: var(--dark-brown);
-  text-decoration: none;
-  padding: 12px 0;
-  font-size: 1.2rem;
-  font-weight: 600;
-  border-radius: 6px;
-  transition: background 0.18s ease, color 0.18s ease;
-}
-nav.main-nav a:hover {
-  background: var(--dark-brown);
-  color: var(--mustard);
-}
-nav.main-nav a.active {
-  background: var(--dark-brown);
-  color: var(--mustard);
-}
-
-/* =========================
-   Step 3: Typography
-   ========================= */
-.site-title {
-  margin: 0;
-  font-size: 32px;
-  font-weight: bold;
-  color: var(--white);
-}
-
-/* =========================
-   Step 4: Colors & Backgrounds
-   ========================= */
-header.site-header {
-  background: var(--dark-brown);
-  color: var(--white);
-  padding: 0;
-}
-.header-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 15px 20px;
-  position: relative;
-}
-.logo {
-  /* Step 7: Image Styling */
-  width: 55px;
-  height: 55px;
-  border-radius: 50%; /* circle */
-  object-fit: cover;
-  margin-right: 12px;
-}
-
-/* =========================
-   Step 5: Layout & Box Model
-   ========================= */
+/* Section Titles*/
 .section-title {
   margin: 0 0 15px;
-  position: relative;
+  position: relative;   
   padding-bottom: 10px;
 }
+
 .section-title::before {
-  /* Step 9: Advanced Styling (Pseudo-element) */
   content: "";
   position: absolute;
   left: 0;
@@ -121,47 +57,111 @@ header.site-header {
   border-radius: 2px;
 }
 
-/* =========================
-   Step 6: Navigation Menu
-   ========================= */
-nav.main-nav {
-  background: var(--mustard);
+
+/* Descendant selectors */
+nav.main-nav a {
+  flex: 1;
+  text-align: center;
+  color: var(--white);
+  text-decoration: none;
+  padding: 12px 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: background 0.18s ease, color 0.18s ease;
 }
-.nav-inner {
+
+/* Step 3: Typography*/
+.site-title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--white);
+}
+
+/* Step 4: Header Layout */
+/*  Part 1 – Task 1: Navigation Bar (Flexbox) */
+header.site-header {
+  background: var(--dark-brown);
+  color: var(--white);
+  padding: 0;
+}
+.header-inner {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-around;
-  padding: 12px 20px;
-}
-nav.main-nav a:hover {
-  background: var(--dark-brown);
-  color: var(--mustard);
-}
-nav.main-nav a.active {
-  background: var(--dark-brown);
-  color: var(--mustard);
+  align-items: center;     
+  justify-content: space-between; 
+  padding: 15px 20px;
+  gap: 40px;
+  position: relative;
 }
 
-/* =========================
-   Step 7: Image Styling
-   ========================= */
+.brand {
+  display: flex;
+  align-items: center;     
+}
+
+.logo {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;     
+  gap: 20px;
+}
+
+/* Step 6: Navigation Menu*/
+/*  Part 1 – Task 1  */
+nav.main-nav {
+  background: none;
+}
+.nav-inner {
+  display: flex;          
+  gap: 20px;
+}
+nav.main-nav a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;      
+  height: 40px;
+  padding: 0 16px;
+  text-decoration: none;
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+nav.main-nav a:hover,
+nav.main-nav a.active {
+  background: var(--mustard);
+  color: var(--dark-brown);
+}
+
+/* Step 7: Image Styling*/
 .friends-list img.avatar {
   width: 50px;
   height: 50px;
-  border-radius: 50%; /* circle */
+  border-radius: 50%;
   border: 2px solid var(--mustard);
   margin-right: 12px;
 }
 .recipe-thumb {
   width: 100%;
+  max-height: 200px;    
+  object-fit: contain;   
   border-radius: 6px;
-  margin-bottom: 10px;
+  margin-bottom: 10px;    
 }
 
-/* =========================
-   Step 5: Friends List Layout
-   ========================= */
+/* Step 5: Friends List Layout*/
 .friends-list {
   list-style: none;
   padding: 0;
@@ -174,31 +174,193 @@ nav.main-nav a.active {
   font-size: 1.1rem;
   font-weight: 500;
 }
+/* Search box for Add Friends */
+.friend-search {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
 
-/* =========================
-   Step 5: Recipe Cards (Box Model)
-   ========================= */
-.recipe-card {
-  background: #fffbea;
+.search-input {
+  flex: 1;
+  padding: 8px 12px;
   border: 1px solid var(--dark-brown);
   border-radius: 6px;
-  padding: 15px;
-  margin: 15px 0;
-}
-.recipe-card h3 {
-  margin: 10px 0 5px;
-}
-.recipe-card p {
-  margin: 0;
 }
 
-/* =========================
-   Step 5: Footer
-   ========================= */
+.search-btn {
+  margin-left: auto;              
+  background: var(--mustard);      
+  color: var(--dark-brown);       
+  border: none;
+  padding: 8px 14px;
+  border-radius: 25px;          
+  font-weight: bold;
+  font-size: 0.95rem;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15); 
+  transition: all 0.25s ease;     
+}
+.search-btn:hover {
+  background: var(--dark-brown);  
+  color: var(--mustard);
+  transform: translateY(-2px);    
+  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+}
+/* Delete button style */
+.delete-btn {
+  margin-left: auto; 
+  background: #e63946; 
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.delete-btn:hover {
+  background: #b22234; 
+  transform: scale(1.05); 
+}
+/* Add button style */
+.add-btn {
+  margin-left: auto;             
+  background: var(--mustard);     
+  color: var(--dark-brown);        
+  border: none;
+  padding: 8px 14px;
+  border-radius: 25px;           
+  font-weight: bold;
+  font-size: 0.95rem;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  transition: all 0.25s ease;     
+}
+
+/* Hover effect */
+.add-btn:hover {
+  background: var(--dark-brown);  
+  color: var(--mustard);
+  transform: translateY(-2px);    
+  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+}
+
+/* Active */
+.add-btn:active {
+  transform: translateY(0);      
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+/* Container for sections */
+.friends-sections {
+  display: flex;        
+  gap: 20px;             
+  align-items: stretch;   
+}
+
+/* Each section is the same width. */
+.friends-sections .section {
+  flex: 1;               
+  display: flex;
+  flex-direction: column; 
+}
+
+
+/* Step 5: Recipe Cards */
+.card-row {
+  display: flex;
+  justify-content: space-between; 
+  gap: 20px;                    
+  flex-wrap: wrap;              
+}
+
+.card {
+  background: #fffbea;
+  border: 1px solid var(--dark-brown);
+  border-radius: 8px;
+  padding: 15px;
+  flex: 1;                       
+  min-width: 200px;              
+  max-width: 300px;             
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+.btn-explore {
+  display: inline-block;
+  background: var(--mustard);
+  color: var(--dark-brown);
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.btn-explore:hover {
+  background: var(--dark-brown);
+  color: var(--mustard);
+  transform: scale(1.05);
+}
+
+/* Step 5: Footer*/
 footer {
   text-align: center;
   color: var(--white);
   background: var(--dark-brown);
   padding: 15px;
   margin-top: auto;
+}
+
+/* Part 2: Grid Layout (Task 3) */
+/* Part 2 Task 3: Grid Layout with Areas */
+.layout {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+header.site-header { grid-area: header; }
+.sidebar { grid-area: sidebar; background: var(--light-mustard); padding: 15px; }
+main { grid-area: main; padding: 20px; }
+footer { grid-area: footer; }
+
+/* Part 2: Image Gallery (Task 4)*/
+/*  Part 2 Task 4: Image Gallery on Grid */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 12px;
+}
+.gallery img {
+  width: 100%;
+  border-radius: 6px;
+  display: block;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.gallery img:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
 }
