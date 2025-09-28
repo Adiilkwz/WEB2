@@ -273,3 +273,51 @@ footer {
   margin-top: auto;
   grid-area: footer;
 }
+/* =========================
+   Step 4: Image Gallery
+   ========================= */
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 колонки */
+  grid-template-rows: auto;
+  gap: 15px; /* расстояние между картинками */
+  margin: 20px auto;
+  max-width: 1000px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.08); /* эффект "приближения" */
+}
+
+/* overlay caption */
+.gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(92, 64, 51, 0.8); /* тёмно-коричневый с прозрачностью */
+  color: var(--mustard);
+  text-align: center;
+  padding: 10px;
+  font-size: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-caption {
+  opacity: 1; /* показываем текст при наведении */
+}
