@@ -255,16 +255,16 @@ nav.main-nav a.active {
 
 /* Container for sections */
 .friends-sections {
-  display: flex;        
-  gap: 20px;             
-  align-items: stretch;   
+  display: flex;
+  flex-direction: column; /* теперь вертикально */
+  gap: 20px;
+  align-items: stretch;
+  max-width: 600px;   /* чтобы не растягивались на весь экран */
+  margin: 0 auto;     /* центрируем */
 }
 
-/* Each section is the same width. */
 .friends-sections .section {
-  flex: 1;               
-  display: flex;
-  flex-direction: column; 
+  width: 100%;
 }
 
 
