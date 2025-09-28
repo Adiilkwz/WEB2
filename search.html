@@ -8,31 +8,51 @@
 <body>
     <header class="site-header">
         <div class="header-inner">
-            <img src="images/logo.jpg" alt="Nyam-Nyam Logo" class="logo">
-            <h1 class="site-title">Nyam-Nyam</h1>
-        </div>
-        <nav class="main-nav">
-            <div class="nav-inner">
-                <a href="index.html">Home</a>
-                <a href="search.html" class="active">Search</a>
-                <a href="friends.html">Friends</a>
-                <a href="trendy.html">Trendy Recipes</a>
-                <a href="addrecipe.html">Add Recipe</a>
-                <a href="account.html">Profile</a>
-                <a href="login.html">Login</a>
+            <div class="brand">
+                <img src="images/logo.jpg" alt="Nyam-Nyam Logo" class="logo">
+                <h1 class="site-title">Nyam-Nyam</h1>
             </div>
-        </nav>
+            <nav class="main-nav">
+                <div class="nav-inner">
+                    <a href="index.html">Home</a>
+                    <a href="search.html"class="active">Search</a>
+                    <a href="friends.html" >Friends</a>
+                    <a href="trendy.html">Trendy Recipes</a>
+                    <a href="addrecipe.html">Add Recipe</a>
+                    <a href="account.html">Profile</a>
+                </div>
+            </nav>
+        </div>
     </header>
 
     <main id = "main">
         <section class="section">
-            <h2 class="section-title">Search Recipes</h2>
-            <form class="search-form">
-                <label for="query">Enter recipe name or ingredient:</label>
-                <input type="text" id="query" name="query" placeholder="e.g., Pasta, Chicken, Dessert">
-                <button type="submit" class="btn-primary">Search</button>
-            </form>
+        <h2 class="section-title">Search Results</h2>
+        
+        <div class="card-row">
+            <div class="recipe-card">
+            <img src="images/pasta.jpg" alt="Creamy Pasta">
+            <h3>Creamy Pasta</h3>
+            <p>Pasta with creamy sauce and parmesan cheese.</p>
+            <button class="btn-primary">View Recipe</button>
+            </div>
+
+            <div class="recipe-card">
+            <img src="images/chicken.jpg" alt="Grilled Chicken">
+            <h3>Grilled Chicken</h3>
+            <p>Juicy chicken breast with spices and herbs.</p>
+            <button class="btn-primary">View Recipe</button>
+            </div>
+
+            <div class="recipe-card">
+            <img src="images/dessert.jpg" alt="Fruit Dessert">
+            <h3>Fruit Dessert</h3>
+            <p>Refreshing mix of berries with cream.</p>
+            <button class="btn-primary">View Recipe</button>
+            </div>
+        </div>
         </section>
+
     </main>
 
     <footer>
