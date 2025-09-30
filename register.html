@@ -6,7 +6,9 @@
     <link rel="stylesheet" href="css/login_register.css">
 </head>
 <body>
-    <!-- Header -->
+    <!-- =====================
+         Header
+    ====================== -->
     <header class="site-header">
         <div class="header-inner">
             <div class="brand">
@@ -27,60 +29,57 @@
         </div>
     </header>
 
+    <aside class="sidebar">
+        <h3>Starting Menu</h3>
+        <ol>
+            <li><a href="#register">Register</a></li>
+            <li><a href="#whyjoin">Why join Nyam-Nyam?</a></li>
+        </ol>
+    </aside>
+
     <main id="main">
-        <!-- Register Form -->
-        <section class="form-card">
-            <h2 class="section-title">Create Account</h2>
-            <form>
-                <label for="name">Full Name:</label>
-                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+        <div class="main-content">
+            <section class="form-card" id="register">
+                <h2 class="section-title">Create Account</h2>
+                <form>
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" placeholder="Enter a password" required>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Enter a password" required>
 
-                <label for="confirm">Confirm Password:</label>
-                <input type="password" id="confirm" name="confirm" placeholder="Confirm your password" required>
+                    <label for="confirm">Confirm Password:</label>
+                    <input type="password" id="confirm" name="confirm" placeholder="Confirm your password" required>
 
-                <button type="submit" class="btn-primary" onclick="window.location.href='index.html'">Register</button>
-            </form>
-            <p class="form-note">Already have an account? <a href="login.html">Login here</a></p>
-        </section>
+                    <button type="submit" class="btn-primary" onclick="window.location.href='index.html'">Register</button>
+                </form>
+                <p class="form-note">Already have an account? <a href="login.html">Login here</a></p>
+            </section>
 
-        <!-- Flexbox Cards -->
-        <section>
-            <h2 class="section-title">Why Join Nyam-Nyam?</h2>
-            <div class="card-row">
-                <div class="card">
-                    <h3>Share Recipes</h3>
-                    <p>Create your own recipe posts and inspire others.</p>
+            <section id="whyjoin">
+                <div class ="recipes-container">
+                <h2 class="section-title">Why Join Nyam-Nyam?</h2>
+                <div class="card-row">
+                    <div class="card">
+                        <h3>Share Recipes</h3>
+                        <p>Create your own recipe posts and inspire others.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Connect with Friends</h3>
+                        <p>Follow other food lovers and share your favorites.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Discover Trends</h3>
+                        <p>Explore trending recipes from around the world.</p>
+                    </div>
                 </div>
-                <div class="card">
-                    <h3>Connect with Friends</h3>
-                    <p>Follow other food lovers and share your favorites.</p>
                 </div>
-                <div class="card">
-                    <h3>Discover Trends</h3>
-                    <p>Explore trending recipes from around the world.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Grid Layout -->
-        <section>
-            <h2 class="section-title">Community Layout (Grid)</h2>
-            <div class="page-grid">
-                <div class="header">Header</div>
-                <div class="sidebar">Sidebar (profile, groups)</div>
-                <div class="main">Main Content (community feed)</div>
-                <div class="footer">Footer</div>
-            </div>
-        </section>
+            </section>
+        </div>
     </main>
-
-    <!-- Footer -->
     <footer>
         <p>&copy; 2025 Nyam-Nyam. Adil, Yerassyl, Yesbol, Bekarys. All rights reserved.</p>
     </footer>

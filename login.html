@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/login_register.css">
 </head>
 <body>
-    <!-- Header -->
+    <!-- Header (Task 3: top area) -->
     <header class="site-header">
         <div class="header-inner">
             <div class="brand">
@@ -26,53 +26,56 @@
             </nav>
         </div>
     </header>
+    
+    <!-- Sidebar (Task 3: left area) -->
+    <aside class="sidebar">
+        <h3>Starting Menu</h3>
+        <ol>
+            <li><a href="#login">Login</a></li>
+            <li><a href="#quickrecipes">Quick Recipes</a></li>
+        </ol>
+    </aside>
 
+    <!-- Main content (Task 3: right area) -->
     <main id="main">
-        <section class="form-card">
-            <h2 class="section-title">Login</h2>
-            <form>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        <div class="main-content">
+            <section class="form-card" id="login">
+                <h2 class="section-title">Login</h2>
+                <form>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
 
-                <button type="submit" class="btn-primary" onclick="window.location.href='index.html'">Login</button>
-            </form>
-            <p class="form-note">Don’t have an account? <a href="register.html">Register here</a></p>
-        </section>
+                    <button type="submit" class="btn-primary" onclick="window.location.href='index.html'">Login</button>
+                </form>
+                <p class="form-note">Don’t have an account? <a href="register.html">Register here</a></p>
+            </section>
 
-        <section>
-            <h2 class="section-title">Quick Recipes</h2>
-            <div class="card-row">
-                <div class="card">
-                    <h3>Breakfast</h3>
-                    <p>Easy eggs & toast in 5 minutes.</p>
+            <!-- Flex row cards -->
+            <section>
+                <div class="recipes-container">
+                <h2 class="section-title">Quick Recipes</h2>
+                    <div class="card-row">
+                        <div class="card">
+                            <h3>Breakfast</h3>
+                            <p>Easy eggs & toast in 5 minutes.</p>
+                        </div>
+                        <div class="card">
+                            <h3>Healthy Snack</h3>
+                            <p>Fresh fruit salad ideas.</p>
+                        </div>
+                        <div class="card">
+                            <h3>Dessert</h3>
+                            <p>Sweet recipes for any occasion.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="card">
-                    <h3>Healthy Snack</h3>
-                    <p>Fresh fruit salad ideas.</p>
-                </div>
-                <div class="card">
-                    <h3>Dessert</h3>
-                    <p>Sweet recipes for any occasion.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Grid Layout  -->
-        <section>
-            <h2 class="section-title">Recipe Layout (Grid)</h2>
-            <div class="page-grid">
-                <div class="header">Header</div>
-                <div class="sidebar">Sidebar (categories, links)</div>
-                <div class="main">Main Content (recipes, posts)</div>
-                <div class="footer">Footer</div>
-            </div>
-        </section>
+            </section>
     </main>
 
-    <!-- Footer -->
+    <!-- Footer (Task 3: bottom area) -->
     <footer>
         <p>&copy; 2025 Nyam-Nyam. Adil, Yerassyl, Yesbol, Bekarys. All rights reserved.</p>
     </footer>

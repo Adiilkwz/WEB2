@@ -22,6 +22,8 @@ html, body {
   display: flex;
   flex-direction: column;
 }
+
+/* ===== Task 3: Page Layout with Grid Areas ===== */
 body {
   display: grid;
   grid-template-rows: auto 1fr auto;
@@ -65,20 +67,12 @@ main .section, main .recipe-card {
   color: var(--white);
 }
 
-/* =========================
-   Step 4: Colors & Backgrounds
-   ========================= */
+/* ===== Task 1: Navigation Bar ===== */
 header.site-header {
   grid-area: header;
   background: var(--dark-brown);
   color: var(--white);
   padding: 0;
-}
-.sidebar {
-  grid-area: sidebar;
-  background: var(--light-mustard);
-  padding: 10px;
-  border-right: 2px solid var(--dark-brown);
 }
 .header-inner {
   max-width: 1200px;
@@ -102,6 +96,12 @@ header.site-header {
   border-radius: 50%;
   object-fit: cover;
   margin-right: 10px;
+}
+.sidebar {
+  grid-area: sidebar;
+  background: var(--light-mustard);
+  padding: 10px;
+  border-right: 2px solid var(--dark-brown);
 }
 
 /* =========================
@@ -205,9 +205,8 @@ form textarea {
 .profile-info {
   text-align: left;
 }
-/* =========================
-   My Favorite Recipes Buttons
-   ========================= */
+
+/* ===== Task 2: Card Row ===== */
 .btn-primary{
   display: inline-block;
   background: var(--mustard);
@@ -225,9 +224,7 @@ form textarea {
   color: var(--mustard);
   transform: scale(1.05);
 }
-/* =========================
-   Favorite Recipes Card Row
-   ========================= */
+
 .card-row {
   display: flex;
   justify-content: space-between; 
@@ -262,6 +259,7 @@ form textarea {
   border-radius: 6px;
   margin-bottom: 10px;
 }
+
 /* =========================
    Step 5: Footer
    ========================= */
@@ -273,9 +271,8 @@ footer {
   margin-top: auto;
   grid-area: footer;
 }
-/* =========================
-   Step 4: Image Gallery
-   ========================= */
+
+/* ===== Task 4: Image Gallery ===== */
 .gallery-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
