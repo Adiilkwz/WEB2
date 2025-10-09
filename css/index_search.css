@@ -236,3 +236,83 @@ footer {
   padding: 15px;
   margin-top: auto;
 }
+/* =========================
+   Task 1: Responsive Typography
+   ========================= */
+
+/* Desktop (≥ 992px, по умолчанию) */
+h1, h2, h3 {
+  font-size: 2rem;
+}
+p {
+  font-size: 1.1rem;
+}
+
+/* Tablet (576px–991px) */
+@media (max-width: 991px) and (min-width: 576px) {
+  h1, h2, h3 {
+    font-size: 1.6rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile (≤ 575px) */
+@media (max-width: 575px) {
+  h1, h2, h3 {
+    font-size: 1.3rem;
+  }
+  p {
+    font-size: 0.9rem;
+  }
+}
+
+
+/* =========================
+   Task 2: Responsive Cards
+   ========================= */
+
+/* Desktop (≥ 992px) — ровно 3 карточки в ряд */
+@media (min-width: 992px) {
+  .recipe-card-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;       /* между карточками */
+    flex-wrap: nowrap;
+  }
+  .recipe-card {
+    flex: 0 0 30%;   /* 30%, чтобы 3 карточки + gap уместились */
+    max-width: 30%;
+    box-sizing: border-box;
+  }
+}
+
+
+
+/* Tablet (576px–991px) — 2 карточки в ряд */
+@media (max-width: 991px) and (min-width: 576px) {
+  .recipe-card-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  .recipe-card {
+    flex: 1 1 45%;     /* примерно половина */
+    max-width: 350px;
+  }
+}
+
+/* Mobile (≤ 575px) — 1 карточка в ряд */
+@media (max-width: 575px) {
+  .recipe-card-row {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .recipe-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
