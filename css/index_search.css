@@ -1,318 +1,221 @@
+/* =========================================================
+   Nyam-Nyam — Account / Add Recipe Page Stylesheet
+   ========================================================= */
+
+/* ===== Root Variables ===== */
 :root {
   --mustard: #D8A300;
   --dark-brown: #5C4033;
   --white: #FFFFFF;
-  --light-mustard: rgba(255,248,225,0.95);
+  --light-mustard: rgba(255, 248, 225, 0.95);
 }
 
-/* =========================
-   Step 2: CSS Selectors
-   ========================= */
-
-html, body {
+/* ===== General Styles ===== */
+body {
   font-family: "Times New Roman", Times, serif;
   background: url("../images/cover.jpg") no-repeat center center fixed;
   background-size: cover;
+  color: var(--dark-brown);
   margin: 0;
   padding: 0;
-  color: var(--dark-brown);
-  min-height: 100%;
-  height: 100%;
 }
 
-body {
-  display: grid; /* превращаем body в grid-контейнер */
-  grid-template-rows: auto 1fr auto; /* header - main - footer */
-  grid-template-columns: 250px 1fr;  /* sidebar слева, контент справа */
-  grid-template-areas: 
-    "header header"
-    "sidebar main"
-    "footer footer";
-  min-height: 100vh; /* на всю высоту экрана */
-}
-
-main {
-  flex: 1;
-  grid-area: main;
-  padding: 20px;
-}
-
-/* =========================
-   Header
-   ========================= */
-header.site-header {
-  grid-area: header;
-  background: var(--dark-brown);
-  color: var(--white);
-  padding: 0;
-}
-
-.header-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;    
-  justify-content: space-between; 
-  padding: 15px 20px;
-  gap: 40px;
-  position: relative;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-}
-
+/* ===== Logo & Avatar ===== */
 .logo {
   width: 55px;
   height: 55px;
   border-radius: 50%;
   object-fit: cover;
-  margin-right: 10px;
 }
 
-.site-title {
-  margin: 0;
-  font-size: 32px;
-  font-weight: bold;
-  color: var(--white);
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid var(--mustard);
+  object-fit: cover;
 }
 
-/* =========================
-   Navigation
-   ========================= */
-nav.main-nav {
-  background: none;
-}
+/* ===== Custom Bootstrap Colors ===== */
+.bg-dark-brown { background-color: var(--dark-brown) !important; }
+.text-dark-brown { color: var(--dark-brown) !important; }
+.bg-light-mustard { background-color: var(--light-mustard) !important; }
+.text-mustard { color: var(--mustard) !important; }
 
-.nav-inner {
-  display: flex;
-  align-items: center;      
-  gap: 20px;
-}
-
-nav.main-nav a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  white-space: nowrap;      
-  height: 40px;
-  padding: 0 16px;
-  text-decoration: none;
-  color: var(--white);
-  font-size: 1rem;
-  font-weight: 500;
-  border-radius: 6px;
-  transition: background 0.18s ease, color 0.18s ease;
-}
-nav.main-nav a:hover,
-nav.main-nav a.active {
-  background: var(--mustard);
+/* ===== Buttons ===== */
+.btn-mustard {
+  background-color: var(--mustard);
   color: var(--dark-brown);
+  border: none;
+  transition: 0.3s ease;
 }
 
-/* =========================
-   Sidebar
-   ========================= */
-.sidebar {
-  grid-area: sidebar;
+.btn-mustard:hover {
+  background-color: var(--dark-brown);
+  color: var(--mustard);
+}
+
+.btn-outline-dark-brown {
+  border: 2px solid var(--dark-brown);
+  color: var(--dark-brown);
+  transition: 0.3s ease;
+}
+
+.btn-outline-dark-brown:hover {
+  background-color: var(--dark-brown);
+  color: var(--mustard);
+}
+
+/* ===== Section Container ===== */
+.section {
   background: var(--light-mustard);
-  padding: 10px;
-  border-right: 2px solid var(--dark-brown);
+  border: 1px solid rgba(92, 64, 51, 0.5);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+  background: var(--light-mustard);
+  border: 1px solid rgba(92, 64, 51, 0.5);
+  border-radius: 8px;
 }
 
 .sidebar h3 {
-  margin-top: 0;
+  color: var(--dark-brown);
+  margin-bottom: 10px;
 }
 
-/* =========================
-   Section & Titles
-   ========================= */
-.section {
-  background: var(--light-mustard);
-  border: 1px solid rgba(92,64,51,0.6);
-  border-radius: 8px;
-  max-width: 900px;
-  margin: 30px auto;
-  padding: 25px;
+.sidebar a {
+  color: var(--dark-brown);
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
+.sidebar a:hover {
+  color: var(--mustard);
+}
+
+/* ===== Section Titles ===== */
 .section-title {
-  margin: 0 0 15px;
   position: relative;
-  padding-bottom: 10px;
+  padding-bottom: 8px;
+  font-weight: bold;
+  margin-bottom: 15px;
 }
-.section-title::before {
+
+.section-title::after {
   content: "";
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 60px;
+  width: 50px;
   height: 4px;
   background: var(--mustard);
   border-radius: 2px;
 }
 
-/* =========================
-   Recipe Cards
-   ========================= */
-.card-row {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  align-items: stretch;
-  flex-wrap: wrap; 
-}
-
-.recipe-card {
-  flex: 1;
-  min-width: 250px;
-  max-width: 300px;
-  background: #fffbea;
-  border: 1px solid var(--dark-brown);
-  border-radius: 6px;
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.recipe-card img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 6px;
-  margin-bottom: 10px;
-}
-
-.recipe-card h3 {
-  margin: 10px 0;
-  font-size: 1.3rem;
-  color: var(--dark-brown);
-}
-
-.recipe-card p {
-  flex-grow: 1; 
-  margin-bottom: 12px;
-}
-
-.recipe-card button {
-  margin-top: auto; 
-}
-
-.recipe-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-}
-
-/* =========================
-   Buttons
-   ========================= */
-.btn-primary {
-  display: inline-block;
-  background: var(--mustard);
-  color: var(--dark-brown);
-  border: none;
-  border-radius: 6px;
-  padding: 10px 20px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: transform 0.2s ease, background 0.2s ease;
-}
-.btn-primary:hover {
-  background: var(--dark-brown);
-  color: var(--mustard);
-  transform: scale(1.05);
-}
-
-/* =========================
-   Footer
-   ========================= */
+/* ===== Footer ===== */
 footer {
-  grid-area: footer;
+  font-size: 0.9rem;
   text-align: center;
   color: var(--white);
-  background: var(--dark-brown);
-  padding: 15px;
-  margin-top: auto;
-}
-/* =========================
-   Task 1: Responsive Typography
-   ========================= */
-
-/* Desktop (≥ 992px, по умолчанию) */
-h1, h2, h3 {
-  font-size: 2rem;
-}
-p {
-  font-size: 1.1rem;
 }
 
-/* Tablet (576px–991px) */
-@media (max-width: 991px) and (min-width: 576px) {
-  h1, h2, h3 {
-    font-size: 1.6rem;
-  }
-  p {
-    font-size: 1rem;
-  }
-}
+/* =========================================================
+   Responsive Design
+   ========================================================= */
 
-/* Mobile (≤ 575px) */
-@media (max-width: 575px) {
+/* ===== Small Devices (≤ 767px) ===== */
+@media (max-width: 767px) {
+
+  /* Typography */
   h1, h2, h3 {
     font-size: 1.3rem;
   }
-  p {
+
+  p, label, input, textarea, select, button {
     font-size: 0.9rem;
   }
-}
 
-
-/* =========================
-   Task 2: Responsive Cards
-   ========================= */
-
-/* Desktop (≥ 992px) — ровно 3 карточки в ряд */
-@media (min-width: 992px) {
-  .recipe-card-row {
-    display: flex;
-    justify-content: center;
-    gap: 20px;       /* между карточками */
-    flex-wrap: nowrap;
+  /* Stack layout vertically */
+  .row {
+    flex-direction: column !important;
   }
-  .recipe-card {
-    flex: 0 0 30%;   /* 30%, чтобы 3 карточки + gap уместились */
-    max-width: 30%;
-    box-sizing: border-box;
-  }
-}
 
-
-
-/* Tablet (576px–991px) — 2 карточки в ряд */
-@media (max-width: 991px) and (min-width: 576px) {
-  .recipe-card-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-  }
-  .recipe-card {
-    flex: 1 1 45%;     /* примерно половина */
-    max-width: 350px;
-  }
-}
-
-/* Mobile (≤ 575px) — 1 карточка в ряд */
-@media (max-width: 575px) {
-  .recipe-card-row {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  .recipe-card {
-    flex: 1 1 100%;
+  /* Sidebar full width */
+  aside.col-lg-3 {
+    width: 100% !important;
     max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  /* Main content full width */
+  main.col-lg-9 {
+    width: 100% !important;
+    max-width: 100%;
+  }
+
+  /* Sidebar styling */
+  .sidebar,
+  .p-3.bg-light-mustard.rounded {
+    padding: 15px !important;
+    text-align: center;
+  }
+
+  .sidebar h3 {
+    font-size: 1.1rem;
+  }
+
+  /* Form adjustments */
+  form {
+    padding: 15px !important;
+  }
+
+  form label {
+    font-size: 0.95rem;
+  }
+
+  form input,
+  form textarea,
+  form select {
+    font-size: 0.9rem;
+  }
+
+  /* Button layout */
+  .btn-group {
+    flex-direction: column !important;
+    gap: 10px;
+  }
+
+  .btn-group .btn {
+    width: 100%;
+  }
+
+  /* Reduce navbar padding */
+  .navbar {
+    padding: 10px 15px !important;
+  }
+
+  /* Smaller logo */
+  .logo {
+    width: 45px;
+    height: 45px;
+  }
+
+  /* Section spacing */
+  .section {
+    margin-top: 0;
+  }
+}
+
+/* ===== Tablets (768px–991px) ===== */
+@media (min-width: 768px) and (max-width: 991px) {
+  aside.col-lg-3 {
+    margin-bottom: 20px;
+  }
+
+  .btn-group .btn {
+    width: 48%;
   }
 }
