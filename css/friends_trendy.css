@@ -1,366 +1,191 @@
-/* Step 1: External CSS File Linked*/
-
-/* Step 4: Colors (Color Palette Variables) */
 :root {
   --mustard: #D8A300;
   --dark-brown: #5C4033;
   --white: #FFFFFF;
-  --light-mustard: rgba(255,248,225,0.95);
+  --light-mustard: rgba(255, 248, 225, 0.95);
 }
 
-/* Step 2: CSS Selectors*/
-
-/* Element selectors */
-html, body {
-  height: 100%;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  font-family: "Times New Roman", Times, serif; 
-  background: url('../images/cover.jpg') no-repeat center center fixed; 
+/* ===== Общие стили ===== */
+body {
+  font-family: "Times New Roman", Times, serif;
+  background: url("../images/cover.jpg") no-repeat center center fixed;
   background-size: cover;
   color: var(--dark-brown);
-}
-main {
-  flex: 1;
+  min-height: 100vh;
 }
 
-/* ID selector */
-#main {
-  padding: 20px;
-}
-
-/* Class selectors */
-.section {
-  background: var(--light-mustard);
-  border: 1px solid rgba(92,64,51,0.6);
-  border-radius: 8px;
-  max-width: 900px;
-  margin: 30px auto;
-  padding: 25px;
-}
-/* Section Titles*/
-.section-title {
-  margin: 0 0 15px;
-  position: relative;   
-  padding-bottom: 10px;
-}
-
-.section-title::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 60px;
-  height: 4px;
-  background: var(--mustard);
-  border-radius: 2px;
-}
-
-
-/* Descendant selectors */
-nav.main-nav a {
-  flex: 1;
-  text-align: center;
-  color: var(--white);
-  text-decoration: none;
-  padding: 12px 0;
-  font-size: 1.2rem;
-  font-weight: 600;
-  border-radius: 6px;
-  transition: background 0.18s ease, color 0.18s ease;
-}
-
-/* Step 3: Typography*/
-.site-title {
-  margin: 0;
-  font-size: 28px;
-  font-weight: bold;
-  color: var(--white);
-}
-
-/* Step 4: Header Layout */
-/*  Part 1 – Task 1: Navigation Bar (Flexbox) */
-header.site-header {
-  background: var(--dark-brown);
-  color: var(--white);
-  padding: 0;
-}
-.header-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;     
-  justify-content: space-between; 
-  padding: 15px 20px;
-  gap: 40px;
-  position: relative;
-}
-
-.brand {
-  display: flex;
-  align-items: center;     
-}
-
+/* Логотип */
 .logo {
   width: 55px;
   height: 55px;
   border-radius: 50%;
   object-fit: cover;
-  margin-right: 10px;
 }
 
-.nav-inner {
+/* Цвета Bootstrap */
+.bg-dark-brown { background-color: var(--dark-brown) !important; }
+.text-dark-brown { color: var(--dark-brown) !important; }
+.bg-light-mustard { background-color: var(--light-mustard) !important; }
+.text-mustard { color: var(--mustard) !important; }
+
+/* ===== Кнопки ===== */
+.btn-mustard {
+  background-color: var(--mustard);
+  color: var(--dark-brown);
+  border: none;
+  transition: 0.3s;
+}
+.btn-mustard:hover {
+  background-color: var(--dark-brown);
+  color: var(--mustard);
+}
+.btn-outline-dark-brown {
+  border: 2px solid var(--dark-brown);
+  color: var(--dark-brown);
+}
+.btn-outline-dark-brown:hover {
+  background-color: var(--dark-brown);
+  color: var(--mustard);
+}
+
+/* ===== Боковое меню ===== */
+.sidebar {
+  background: var(--light-mustard);
+  border: 1px solid rgba(92, 64, 51, 0.5);
+  border-radius: 8px;
+  padding: 20px;
+}
+.sidebar h3 {
+  color: var(--dark-brown);
+  margin-bottom: 15px;
+}
+.sidebar a {
+  color: var(--dark-brown);
+  text-decoration: none;
+}
+.sidebar a:hover {
+  color: var(--mustard);
+}
+
+/* ===== Основные секции ===== */
+.section {
+  background: var(--light-mustard);
+  border: 1px solid rgba(92, 64, 51, 0.5);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+.section-title {
+  position: relative;
+  padding-bottom: 8px;
+  font-weight: bold;
+}
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 4px;
+  background: var(--mustard);
+  border-radius: 2px;
+}
+
+/* ===== Карточки (для друзей и рецептов) ===== */
+.card {
+  border: 1px solid rgba(92, 64, 51, 0.3);
+  border-radius: 8px;
+  background-color: #fffbea;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+.card-img-top {
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+.card-body {
+  background-color: var(--light-mustard);
+}
+
+/* ===== Галерея ===== */
+#gallery .card {
   display: flex;
-  align-items: center;     
-  gap: 20px;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
-
-/* Step 6: Navigation Menu*/
-/*  Part 1 – Task 1  */
-nav.main-nav {
-  background: none;
+#gallery .card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
 }
-.nav-inner {
-  display: flex;          
-  gap: 20px;
-}
-nav.main-nav a {
+#gallery .card-body {
+  background-color: var(--light-mustard);
+  flex-grow: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  white-space: nowrap;      
-  height: 40px;
-  padding: 0 16px;
-  text-decoration: none;
-  color: var(--white);
-  font-size: 1rem;
-  font-weight: 500;
-  border-radius: 6px;
-  transition: background 0.18s ease, color 0.18s ease;
-}
-nav.main-nav a:hover,
-nav.main-nav a.active {
-  background: var(--mustard);
-  color: var(--dark-brown);
+  border-top: 1px solid rgba(92, 64, 51, 0.2);
 }
 
-/* Step 7: Image Styling*/
-.friends-list img.avatar {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 2px solid var(--mustard);
-  margin-right: 12px;
-}
-.recipe-thumb {
-  width: 100%;
-  max-height: 200px;    
-  object-fit: contain;   
-  border-radius: 6px;
-  margin-bottom: 10px;    
-}
-
-/* Step 5: Friends List Layout*/
-.friends-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.friends-list li {
-  display: flex;
-  align-items: center;
-  margin: 12px 0;
-  font-size: 1.1rem;
-  font-weight: 500;
-}
-/* Search box for Add Friends */
-.friend-search {
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.search-input {
-  flex: 1;
-  padding: 8px 12px;
-  border: 1px solid var(--dark-brown);
-  border-radius: 6px;
-}
-
-.search-btn {
-  margin-left: auto;              
-  background: var(--mustard);      
-  color: var(--dark-brown);       
-  border: none;
-  padding: 8px 14px;
-  border-radius: 25px;          
-  font-weight: bold;
-  font-size: 0.95rem;
-  cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.15); 
-  transition: all 0.25s ease;     
-}
-.search-btn:hover {
-  background: var(--dark-brown);  
-  color: var(--mustard);
-  transform: translateY(-2px);    
-  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
-}
-/* Delete button style */
-.delete-btn {
-  margin-left: auto; 
-  background: #e63946; 
-  border: none;
-  padding: 6px 12px;
-  border-radius: 6px;
-  font-weight: bold;
-  color: white;
-  cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.delete-btn:hover {
-  background: #b22234; 
-  transform: scale(1.05); 
-}
-/* Add button style */
-.add-btn {
-  margin-left: auto;             
-  background: var(--mustard);     
-  color: var(--dark-brown);        
-  border: none;
-  padding: 8px 14px;
-  border-radius: 25px;           
-  font-weight: bold;
-  font-size: 0.95rem;
-  cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-  transition: all 0.25s ease;     
-}
-
-/* Hover effect */
-.add-btn:hover {
-  background: var(--dark-brown);  
-  color: var(--mustard);
-  transform: translateY(-2px);    
-  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
-}
-
-/* Active */
-.add-btn:active {
-  transform: translateY(0);      
-  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-}
-
-/* Container for sections */
-.friends-sections {
-  display: flex;
-  flex-direction: column; /* теперь вертикально */
-  gap: 20px;
-  align-items: stretch;
-  max-width: 600px;   /* чтобы не растягивались на весь экран */
-  margin: 0 auto;     /* центрируем */
-}
-
-.friends-sections .section {
-  width: 100%;
-}
-
-
-/* Step 5: Recipe Cards */
-.card-row {
-  display: flex;
-  justify-content: space-between; 
-  gap: 20px;                    
-  flex-wrap: wrap;              
-}
-
-.card {
-  background: #fffbea;
-  border: 1px solid var(--dark-brown);
-  border-radius: 8px;
-  padding: 15px;
-  flex: 1;                       
-  min-width: 200px;              
-  max-width: 300px;             
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.card-img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 6px;
-  margin-bottom: 10px;
-}
-.btn-explore {
-  display: inline-block;
-  background: var(--mustard);
-  color: var(--dark-brown);
-  border: none;
-  border-radius: 6px;
-  padding: 8px 16px;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: transform 0.2s ease, background 0.2s ease;
-}
-
-.btn-explore:hover {
-  background: var(--dark-brown);
-  color: var(--mustard);
-  transform: scale(1.05);
-}
-
-/* Step 5: Footer*/
+/* ===== Footer ===== */
 footer {
-  text-align: center;
+  font-size: 0.9rem;
+  background-color: var(--dark-brown);
   color: var(--white);
-  background: var(--dark-brown);
-  padding: 15px;
-  margin-top: auto;
 }
 
-/* Part 2: Grid Layout (Task 3) */
-/* Part 2 Task 3: Grid Layout with Areas */
-.layout {
-  display: grid;
-  grid-template-areas:
-    "header header"
-    "sidebar main"
-    "footer footer";
-  grid-template-columns: 250px 1fr;
-  grid-template-rows: auto 1fr auto;
-  min-height: 100vh;
-}
-header.site-header { grid-area: header; }
-.sidebar { grid-area: sidebar; background: var(--light-mustard); padding: 15px; }
-main { grid-area: main; padding: 20px; }
-footer { grid-area: footer; }
+/* ===== Адаптивность ===== */
 
-/* Part 2: Image Gallery (Task 4)*/
-/*  Part 2 Task 4: Image Gallery on Grid */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 12px;
+/* Мобильные устройства (≤767px) */
+@media (max-width: 767px) {
+  .row {
+    flex-direction: column !important;
+  }
+
+  aside.col-lg-3 {
+    width: 100% !important;
+    margin-bottom: 20px;
+  }
+
+  main.col-lg-9 {
+    width: 100% !important;
+  }
+
+  .navbar {
+    padding: 10px 15px !important;
+  }
+
+  .logo {
+    width: 45px;
+    height: 45px;
+  }
+
+  .card-img-top {
+    height: 180px;
+  }
+
+  h1, h2, h3 {
+    font-size: 1.3rem;
+  }
+
+  p, label, input, textarea, select, button {
+    font-size: 0.9rem;
+  }
 }
-.gallery img {
-  width: 100%;
-  border-radius: 6px;
-  display: block;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-.gallery img:hover {
-  transform: scale(1.05);
-  opacity: 0.9;
+
+/* Планшеты (768px–991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  aside.col-lg-3 {
+    margin-bottom: 20px;
+  }
+
+  .card-img-top {
+    height: 200px;
+  }
 }
