@@ -1,285 +1,221 @@
-/* =========================
-   Step 1: External CSS File Linked
-   ========================= */
+/* =========================================================
+   Nyam-Nyam — Account / Add Recipe Page Stylesheet
+   ========================================================= */
 
-/* Step 4: Colors (Color Palette Variables) */
+/* ===== Root Variables ===== */
 :root {
   --mustard: #D8A300;
   --dark-brown: #5C4033;
   --white: #FFFFFF;
-  --light-mustard: rgba(255,248,225,0.95);
+  --light-mustard: rgba(255, 248, 225, 0.95);
 }
 
-/* =========================
-   Step 2: CSS Selectors
-   ========================= */
-
-/* Element selectors */
-html, body {
-  height: 100%;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  font-family: "Times New Roman", Times, serif; /* Step 3: Typography */
-  background: url('../images/cover.jpg') no-repeat center center fixed; /* Step 4: Background Image */
+/* ===== General Styles ===== */
+body {
+  font-family: "Times New Roman", Times, serif;
+  background: url("../images/cover.jpg") no-repeat center center fixed;
   background-size: cover;
   color: var(--dark-brown);
-}
-main {
-  flex: 1;
-}
-
-/* ID selector */
-#main {
-  padding: 20px;
-}
-
-/* Class selectors */
-.section {
-  background: var(--light-mustard);
-  border: 1px solid rgba(92,64,51,0.6);
-  border-radius: 8px;
-  max-width: 900px;
-  margin: 30px auto;
-  padding: 25px;
-}
-
-/* Descendant selectors */
-nav.main-nav a {
-  flex: 1;
-  text-align: center;
-  color: var(--dark-brown);
-  text-decoration: none;
-  padding: 12px 0;
-  font-size: 1.2rem;
-  font-weight: 600;
-  border-radius: 6px;
-  transition: background 0.18s ease, color 0.18s ease;
-}
-
-/* =========================
-   Step 3: Typography
-   ========================= */
-.site-title {
   margin: 0;
-  font-size: 32px;
-  font-weight: bold;
-  color: var(--white);
-}
-
-/* =========================
-   Step 4: Colors & Backgrounds
-   ========================= */
-header.site-header {
-  background: var(--dark-brown);
-  color: var(--white);
   padding: 0;
 }
-.header-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;    
-  justify-content: space-between; 
-  padding: 15px 20px;
-  gap: 40px;
-  position: relative;
-}
 
-.brand {
-  display: flex;
-  align-items: center;     
-}
-
+/* ===== Logo & Avatar ===== */
 .logo {
   width: 55px;
   height: 55px;
   border-radius: 50%;
   object-fit: cover;
-  margin-right: 10px;
 }
 
-.section-title {
-  margin: 0 0 15px;
-  position: relative;
-  padding-bottom: 10px;
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid var(--mustard);
+  object-fit: cover;
 }
-.section-title::before {
-  /* Step 9: Advanced Styling (Pseudo-element) */
+
+/* ===== Custom Bootstrap Colors ===== */
+.bg-dark-brown { background-color: var(--dark-brown) !important; }
+.text-dark-brown { color: var(--dark-brown) !important; }
+.bg-light-mustard { background-color: var(--light-mustard) !important; }
+.text-mustard { color: var(--mustard) !important; }
+
+/* ===== Buttons ===== */
+.btn-mustard {
+  background-color: var(--mustard);
+  color: var(--dark-brown);
+  border: none;
+  transition: 0.3s ease;
+}
+
+.btn-mustard:hover {
+  background-color: var(--dark-brown);
+  color: var(--mustard);
+}
+
+.btn-outline-dark-brown {
+  border: 2px solid var(--dark-brown);
+  color: var(--dark-brown);
+  transition: 0.3s ease;
+}
+
+.btn-outline-dark-brown:hover {
+  background-color: var(--dark-brown);
+  color: var(--mustard);
+}
+
+/* ===== Section Container ===== */
+.section {
+  background: var(--light-mustard);
+  border: 1px solid rgba(92, 64, 51, 0.5);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+  background: var(--light-mustard);
+  border: 1px solid rgba(92, 64, 51, 0.5);
+  border-radius: 8px;
+}
+
+.sidebar h3 {
+  color: var(--dark-brown);
+  margin-bottom: 10px;
+}
+
+.sidebar a {
+  color: var(--dark-brown);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.sidebar a:hover {
+  color: var(--mustard);
+}
+
+/* ===== Section Titles ===== */
+.section-title {
+  position: relative;
+  padding-bottom: 8px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.section-title::after {
   content: "";
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 60px;
+  width: 50px;
   height: 4px;
   background: var(--mustard);
   border-radius: 2px;
 }
-.nav-inner {
-  display: flex;
-  align-items: center;      
-  gap: 20px;
-}
-nav.main-nav a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  white-space: nowrap;      
-  height: 40px;
-  padding: 0 16px;
-  text-decoration: none;
-  color: var(--white);
-  font-size: 1rem;
-  font-weight: 500;
-  border-radius: 6px;
-  transition: background 0.18s ease, color 0.18s ease;
-}
-nav.main-nav a:hover,
-nav.main-nav a.active {
-  background: var(--mustard);
-  color: var(--dark-brown);
-}
-/* =========================
-   Step 5: Layout & Box Model
-   ========================= */
 
-.recipe-card {
-  background: #fffbea;
-  border: 1px solid var(--dark-brown);
-  border-radius: 6px;
-  padding: 15px;
-  margin: 15px 0;
-}
-
-/* =========================
-   Step 8: Forms (Search)
-   ========================= */
-.search-form label {
-  font-weight: bold;
-  display: block;
-  margin-bottom: 8px;
-}
-.search-form input[type="text"] {
-  width: 96%;
-  max-width: 600px;
-  margin: 6px auto 15px auto;
-  display: block;
-  padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  background: #fffbea;
-  font-family: inherit;
-}
-.btn-primary {
-  display: inline-block;
-  margin-top: 12px;
-  background: var(--mustard);
-  color: var(--dark-brown);
-  border: none;
-  border-radius: 6px;
-  padding: 10px 20px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.2s ease; /* Step 9: Transition */
-}
-.btn-primary:hover {
-  background: #c49700;
-}
-
+/* ===== Footer ===== */
 footer {
+  font-size: 0.9rem;
   text-align: center;
   color: var(--white);
-  background: var(--dark-brown);
-  padding: 15px;
-  margin-top: auto;
-}
-/* =========================
-   Step X: Card Row
-   ========================= */
-.card-row {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  align-items: stretch;
-  flex-wrap: wrap;
 }
 
-.recipe-card {
-  flex: 1;
-  min-width: 250px;
-  background: #fffbea;
-  border: 1px solid var(--dark-brown);
-  border-radius: 6px;
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+/* =========================================================
+   Responsive Design
+   ========================================================= */
+
+/* ===== Small Devices (≤ 767px) ===== */
+@media (max-width: 767px) {
+
+  /* Typography */
+  h1, h2, h3 {
+    font-size: 1.3rem;
+  }
+
+  p, label, input, textarea, select, button {
+    font-size: 0.9rem;
+  }
+
+  /* Stack layout vertically */
+  .row {
+    flex-direction: column !important;
+  }
+
+  /* Sidebar full width */
+  aside.col-lg-3 {
+    width: 100% !important;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  /* Main content full width */
+  main.col-lg-9 {
+    width: 100% !important;
+    max-width: 100%;
+  }
+
+  /* Sidebar styling */
+  .sidebar,
+  .p-3.bg-light-mustard.rounded {
+    padding: 15px !important;
+    text-align: center;
+  }
+
+  .sidebar h3 {
+    font-size: 1.1rem;
+  }
+
+  /* Form adjustments */
+  form {
+    padding: 15px !important;
+  }
+
+  form label {
+    font-size: 0.95rem;
+  }
+
+  form input,
+  form textarea,
+  form select {
+    font-size: 0.9rem;
+  }
+
+  /* Button layout */
+  .btn-group {
+    flex-direction: column !important;
+    gap: 10px;
+  }
+
+  .btn-group .btn {
+    width: 100%;
+  }
+
+  /* Reduce navbar padding */
+  .navbar {
+    padding: 10px 15px !important;
+  }
+
+  /* Smaller logo */
+  .logo {
+    width: 45px;
+    height: 45px;
+  }
+
+  /* Section spacing */
+  .section {
+    margin-top: 0;
+  }
 }
 
-.recipe-card img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 6px;
-  margin-bottom: 10px;
-}
+/* ===== Tablets (768px–991px) ===== */
+@media (min-width: 768px) and (max-width: 991px) {
+  aside.col-lg-3 {
+    margin-bottom: 20px;
+  }
 
-.recipe-card button {
-  margin-top: auto;
-}
-
-.recipe-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-}
-/* =========================
-   Step X: Card Row (Task 2)
-   ========================= */
-.card-row {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  align-items: stretch;
-  flex-wrap: wrap; 
-}
-
-.recipe-card {
-  flex: 1;
-  min-width: 250px;
-  max-width: 300px;
-  background: #fffbea;
-  border: 1px solid var(--dark-brown);
-  border-radius: 6px;
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.recipe-card img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 6px;
-  margin-bottom: 10px;
-}
-
-.recipe-card h3 {
-  margin: 10px 0;
-  font-size: 1.3rem;
-  color: var(--dark-brown);
-}
-
-.recipe-card p {
-  flex-grow: 1; 
-  margin-bottom: 12px;
-}
-
-.recipe-card button {
-  margin-top: auto; 
-}
-
-.recipe-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  .btn-group .btn {
+    width: 48%;
+  }
 }
