@@ -1,104 +1,90 @@
 /* =========================
-   Step 1: External CSS File Linked
+   Color Variables
    ========================= */
-/* Step 4: Colors (Color Palette Variables) */
 :root {
   --mustard: #D8A300;
   --dark-brown: #5C4033;
   --white: #FFFFFF;
-  --light-mustard: rgba(255,248,225,0.95);
+  --light-mustard: rgba(255, 248, 225, 0.95);
 }
 
 /* =========================
-   Step 2: CSS Selectors
+   General Styles
    ========================= */
-
-/* Element selectors */
-html, body {
-  font-family: "Times New Roman", Times, serif; /* Step 3: Typography */
-  background: url("../images/cover.jpg") no-repeat center center fixed; /* Step 4: Background Image */
+body {
+  font-family: "Times New Roman", Times, serif;
+  background: url("../images/cover.jpg") no-repeat center center fixed;
   background-size: cover;
-  margin: 0;
-  padding: 0;
   color: var(--dark-brown);
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
 }
 
-main {
-  flex: 1;
-}
-#main {
-  padding: 20px;
-}
-
-/* =========================
-   Step 3: Typography
-   ========================= */
-.site-title {
-  margin: 0;
-  font-size: 32px;
-  font-weight: bold;
-  line-height: 1;
-  color: var(--white);
-}
-
-/* =========================
-   Step 4: Colors & Backgrounds
-   ========================= */
-header.site-header {
-  background: var(--dark-brown);
-  color: var(--white);
-  padding: 0;
-}
-.header-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px 20px;
-  gap: 40px;
-  position: relative;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-}
-
+/* Logo */
 .logo {
   width: 55px;
   height: 55px;
   border-radius: 50%;
   object-fit: cover;
-  margin-right: 10px;
+}
+
+/* Custom Bootstrap Colors */
+.bg-dark-brown { background-color: var(--dark-brown) !important; }
+.text-dark-brown { color: var(--dark-brown) !important; }
+.bg-light-mustard { background-color: var(--light-mustard) !important; }
+.text-mustard { color: var(--mustard) !important; }
+
+/* Buttons */
+.btn-mustard {
+  background-color: var(--mustard);
+  color: var(--dark-brown);
+  border: none;
+  transition: 0.3s;
+}
+.btn-mustard:hover {
+  background-color: var(--dark-brown);
+  color: var(--mustard);
+}
+.btn-outline-dark-brown {
+  border: 2px solid var(--dark-brown);
+  color: var(--dark-brown);
+  transition: 0.3s;
+}
+.btn-outline-dark-brown:hover {
+  background-color: var(--dark-brown);
+  color: var(--mustard);
 }
 
 /* =========================
-   Step 5: Layout & Box Model
+   Sidebar
    ========================= */
-section {
-  background: rgba(255, 248, 225, 0.95); 
-  border: 2px solid var(--dark-brown);
+.sidebar {
+  background: var(--light-mustard);
+  border: 1px solid rgba(92, 64, 51, 0.5);
   border-radius: 8px;
-  padding: 25px;
-  margin: 30px auto;
-  max-width: 1000px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+  padding: 20px;
+}
+.sidebar h4, .sidebar h3 {
+  color: var(--dark-brown);
+  margin-bottom: 10px;
+}
+.sidebar a {
+  color: var(--dark-brown);
+  text-decoration: none;
+}
+.sidebar a:hover {
+  color: var(--mustard);
 }
 
-/* Section titles */
+/* =========================
+   Section Styling
+   ========================= */
 .section-title {
-  margin: 0 0 10px;
   position: relative;
   padding-bottom: 8px;
-  font-size: 24px;
+  font-weight: bold;
   text-align: center;
+  color: var(--dark-brown);
 }
-.section-title::before {
-  /* Step 9: Advanced Styling (Pseudo-element) */
+.section-title::after {
   content: "";
   position: absolute;
   left: 50%;
@@ -109,156 +95,84 @@ section {
   background: var(--mustard);
   border-radius: 2px;
 }
-nav.main-nav {
-  background: none;
-}
-.nav-inner {
-  display: flex;
-  align-items: center;      
-  gap: 20px;
-}
 
-nav.main-nav a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  white-space: nowrap;      
-  height: 40px;
-  padding: 0 16px;
-  text-decoration: none;
-  color: var(--white);
-  font-size: 1rem;
-  font-weight: 500;
-  border-radius: 6px;
-  transition: background 0.18s ease, color 0.18s ease;
-}
-nav.main-nav a:hover,
-nav.main-nav a.active {
-  background: var(--mustard);
-  color: var(--dark-brown);
-}
 /* =========================
-   Forms
+   Form Styling
    ========================= */
-.form-card {
-  background: var(--light-mustard);
-  border: 2px solid rgba(92,64,51,0.4);
-  border-radius: 10px;
-  max-width: 500px;
-  margin: 50px auto;
-  padding: 25px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-}
 form label {
-  display: block;
-  margin-top: 12px;
   font-weight: bold;
+  margin-top: 10px;
 }
 form input[type="text"],
 form input[type="email"],
-form input[type="password"] {
-  width: 96%;
-  max-width: 450px;
-  margin: 6px auto 15px auto;
-  display: block;
-  padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+form input[type="password"],
+form textarea,
+form select {
   background: #fffbea;
-  font-family: inherit;
-}
-.btn-primary {
-  display: block;
-  width: 100%;
-  margin-top: 16px;
-  background: var(--mustard);
-  color: var(--dark-brown);
-  border: none;
+  border: 1px solid #ccc;
   border-radius: 6px;
-  padding: 12px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.25s ease;
+  padding: 10px;
 }
-.btn-primary:hover {
-  background: var(--dark-brown);
-  color: var(--mustard);
-  transform: scale(1.05);
-}
-.form-note {
-  margin-top: 15px;
-  text-align: center;
-}
-.form-note a {
-  color: var(--dark-brown);
-  font-weight: bold;
-  text-decoration: none;
-}
-.form-note a:hover {
-  color: var(--mustard);
-  text-decoration: underline;
+form input:focus,
+form textarea:focus,
+form select:focus {
+  border-color: var(--mustard);
+  box-shadow: 0 0 4px rgba(216, 163, 0, 0.4);
+  outline: none;
 }
 
 /* =========================
-   Flexbox Cards 
+   Card Section (Why Join)
    ========================= */
-.card-row {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  margin: 30px auto;
-  max-width: 1000px;
-}
 .card {
-  flex: 1;
-  max-width: 300px;
   background: var(--light-mustard);
   border: 2px solid var(--dark-brown);
-  border-radius: 10px;
-  padding: 20px;
-  text-align: center;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
   box-shadow: 0 6px 12px rgba(0,0,0,0.25);
 }
-/* =========================
-   Grid Layout 
-   ========================= */
-.page-grid {
-  display: grid;
-  grid-template-areas:
-    "header header"
-    "sidebar main"
-    "footer footer";
-  grid-template-columns: 250px 1fr;
-  grid-template-rows: auto 1fr auto;
-  min-height: 400px;
-  margin: 40px auto;
-  max-width: 1000px;
-  gap: 15px;
-}
-.page-grid > div {
-  background: var(--light-mustard);
-  border: 1px solid var(--dark-brown);
-  border-radius: 8px;
-  padding: 15px;
-}
-.header { grid-area: header; }
-.sidebar { grid-area: sidebar; }
-.main { grid-area: main; }
-.footer { grid-area: footer; }
-
 
 /* =========================
    Footer
    ========================= */
 footer {
-  text-align: center;
-  color: var(--white);
-  background: var(--dark-brown);
-  padding: 15px;
-  margin-top: auto;
+  font-size: 0.9rem;
+}
+
+/* =========================
+   Responsive Design
+   ========================= */
+
+/* Mobile (≤ 767px): Sidebar stacks */
+@media (max-width: 767px) {
+  .row {
+    flex-direction: column !important;
+  }
+  aside.col-lg-3 {
+    width: 100% !important;
+    margin-bottom: 20px;
+  }
+  .navbar {
+    padding: 10px 15px !important;
+  }
+  .logo {
+    width: 45px;
+    height: 45px;
+  }
+  .btn-group {
+    flex-direction: column !important;
+    gap: 10px;
+  }
+}
+
+/* Tablet (768px – 991px): balanced layout */
+@media (min-width: 768px) and (max-width: 991px) {
+  aside.col-lg-3 {
+    margin-bottom: 20px;
+  }
+  .btn-group .btn {
+    width: 48%;
+  }
 }
