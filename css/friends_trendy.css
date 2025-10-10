@@ -140,9 +140,8 @@ footer {
   color: var(--white);
 }
 
-/* ===== Адаптивность ===== */
 
-/* Мобильные устройства (≤767px) */
+/* Mobile (≤767px) */
 @media (max-width: 767px) {
   .row {
     flex-direction: column !important;
@@ -179,7 +178,7 @@ footer {
   }
 }
 
-/* Планшеты (768px–991px) */
+/*  Tablet (768px–991px) */
 @media (min-width: 768px) and (max-width: 991px) {
   aside.col-lg-3 {
     margin-bottom: 20px;
