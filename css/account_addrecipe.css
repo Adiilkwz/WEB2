@@ -1,119 +1,93 @@
-/* Step 4: Colors (Color Palette Variables) */
 :root {
   --mustard: #D8A300;
   --dark-brown: #5C4033;
   --white: #FFFFFF;
-  --light-mustard: rgba(255,248,225,0.95);
+  --light-mustard: rgba(255, 248, 225, 0.95);
 }
-/* =========================
-   Step 2: CSS Selectors
-   ========================= */
 
-/* Element selectors */
-html, body {
-  font-family: "Times New Roman", Times, serif; /* Step 3: Typography */
-  background: url("../images/cover.jpg") no-repeat center center fixed; /* Step 4: Background Image */
-  background-size: cover;
-  margin: 0;
-  padding: 0;
-  color: var(--dark-brown);
-  min-height: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
+/* ===== General Styles ===== */
 body {
-  display: grid; /* превращаем body в grid-контейнер */
-  grid-template-rows: auto 1fr auto; /* header - main - footer */
-  grid-template-columns: 250px 1fr;  /* sidebar слева, контент справа */
-  grid-template-areas: 
-    "header header"
-    "sidebar main"
-    "footer footer";
-  min-height: 100vh; /* на всю высоту экрана */
-}
-main {
-  flex: 1;
+  font-family: "Times New Roman", Times, serif;
+  background: url("../images/cover.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: var(--dark-brown);
 }
 
-/* ID selector (Step 2 requirement) */
-#main {
-  padding: 20px;
-}
-
-/* Class selectors */
-.section, .recipe-card {
-  background: var(--light-mustard);
-  border: 1px solid rgba(92,64,51,0.6);
-  border-radius: 8px;
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 20px;
-}
-main .section, main .recipe-card {
-  max-width: 100%;  /* убираем ограничение ширины */
-  margin: 20px;
-}
-/* =========================
-   Step 3: Typography
-   ========================= */
-.site-title {
-  margin: 0;
-  font-size: 32px;
-  font-weight: bold;
-  line-height: 1;
-  color: var(--white);
-}
-
-/* =========================
-   Step 4: Colors & Backgrounds
-   ========================= */
-header.site-header {
-  grid-area: header;
-  background: var(--dark-brown);
-  color: var(--white);
-  padding: 0;
-}
-.sidebar {
-  grid-area: sidebar;
-  background: var(--light-mustard);
-  padding: 10px;
-  border-right: 2px solid var(--dark-brown);
-}
-.header-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px 20px;
-  gap: 40px;
-  position: relative;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-}
-
+/* Logo */
 .logo {
   width: 55px;
   height: 55px;
   border-radius: 50%;
   object-fit: cover;
-  margin-right: 10px;
+}
+/* Avatar */
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid var(--mustard);
+  object-fit: cover;
 }
 
-/* =========================
-   Step 5: Layout & Box Model
-   ========================= */
+/* Custom Bootstrap colors */
+.bg-dark-brown { background-color: var(--dark-brown) !important; }
+.text-dark-brown { color: var(--dark-brown) !important; }
+.bg-light-mustard { background-color: var(--light-mustard) !important; }
+.text-mustard { color: var(--mustard) !important; }
+
+/* Buttons */
+.btn-mustard {
+  background-color: var(--mustard);
+  color: var(--dark-brown);
+  border: none;
+  transition: 0.3s;
+}
+.btn-mustard:hover {
+  background-color: var(--dark-brown);
+  color: var(--mustard);
+}
+.btn-outline-dark-brown {
+  border: 2px solid var(--dark-brown);
+  color: var(--dark-brown);
+}
+.btn-outline-dark-brown:hover {
+  background-color: var(--dark-brown);
+  color: var(--mustard);
+}
+
+/* Section box style (same as account) */
+.section {
+  background: var(--light-mustard);
+  border: 1px solid rgba(92, 64, 51, 0.5);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+/* Sidebar */
+.sidebar {
+  background: var(--light-mustard);
+  border: 1px solid rgba(92, 64, 51, 0.5);
+  border-radius: 8px;
+}
+.sidebar h3 {
+  color: var(--dark-brown);
+  margin-bottom: 10px;
+}
+.sidebar a {
+  color: var(--dark-brown);
+  text-decoration: none;
+}
+.sidebar a:hover {
+  color: var(--mustard);
+}
+
+/* Section Title */
 .section-title {
-  margin: 0 0 10px;
   position: relative;
   padding-bottom: 8px;
+  font-weight: bold;
 }
-.section-title::before {
-  /* Step 9: Advanced Styling (Pseudo-element) */
+.section-title::after {
   content: "";
   position: absolute;
   left: 0;
@@ -124,200 +98,101 @@ header.site-header {
   border-radius: 2px;
 }
 
-/* =========================
-   Step 6: Navigation Menu
-   ========================= */
-nav.main-nav {
-  background: none;
-}
-.nav-inner {
-  display: flex;
-  align-items: center;      
-  gap: 20px;
-}
-
-nav.main-nav a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  white-space: nowrap;      
-  height: 40px;
-  padding: 0 16px;
-  text-decoration: none;
-  color: var(--white);
-  font-size: 1rem;
-  font-weight: 500;
-  border-radius: 6px;
-  transition: background 0.18s ease, color 0.18s ease;
-}
-nav.main-nav a:hover,
-nav.main-nav a.active {
-  background: var(--mustard);
-  color: var(--dark-brown);
-}
-/* =========================
-   Step 7: Image Styling
-   ========================= */
-.avatar {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  border: 3px solid var(--mustard);
-  margin-bottom: 7px;
-}
-
-/* =========================
-   Step 8: HTML Forms
-   ========================= */
-form label {
-  display: block;
-  margin-top: 12px;
-  font-weight: bold;
-}
-form input, form textarea, form select {
-  width: 100%;
-  padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-family: inherit;
-  margin-top: 6px;
-}
-form input[type="text"],
-form input[type="password"],
-form input[type="email"],
-form input[type="file"],
-form select,
-form textarea {
-  width: 100%;
-  max-width: 1500px;
-  display: block;
-  margin: 0 auto 15px auto;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-family: inherit;
-  box-sizing: border-box; 
-}
-
-/* =========================
-   Step 5: Profile Page Specific
-   ========================= */
-.profile-info {
-  text-align: left;
-}
-/* =========================
-   My Favorite Recipes Buttons
-   ========================= */
-.btn-primary{
-  display: inline-block;
-  background: var(--mustard);
-  color: var(--dark-brown);
-  border: none;
-  border-radius: 6px;
-  padding: 8px 16px;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: transform 0.2s ease, background 0.2s ease;
-}
-
-.btn-primary:hover {
-  background: var(--dark-brown);
-  color: var(--mustard);
-  transform: scale(1.05);
-}
-/* =========================
-   Favorite Recipes Card Row
-   ========================= */
-.card-row {
-  display: flex;
-  justify-content: space-between; 
-  gap: 10px; 
-  flex-wrap: wrap;
-}
-
-.card {
-  background: #fffbea;
-  border: 1px solid var(--dark-brown);
-  border-radius: 8px;
-  padding: 15px;
-  flex: 1;
-  min-width: 200px;
-  max-width: 300px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.card-img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 6px;
-  margin-bottom: 10px;
-}
-/* =========================
-   Step 5: Footer
-   ========================= */
+/* Footer */
 footer {
-  text-align: center;
-  color: var(--white);
-  background: var(--dark-brown);
-  padding: 15px;
-  margin-top: auto;
-  grid-area: footer;
-}
-/* =========================
-   Step 4: Image Gallery
-   ========================= */
-.gallery-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 колонки */
-  grid-template-rows: auto;
-  gap: 15px; /* расстояние между картинками */
-  margin: 20px auto;
-  max-width: 1000px;
+  font-size: 0.9rem;
 }
 
-.gallery-item {
-  position: relative;
-  overflow: hidden;
-  border-radius: 8px;
+/* Responsive Typography */
+@media (max-width: 767px) {
+  h1, h2, h3 { font-size: 1.3rem; }
+  p, label, input, textarea, select, button {
+    font-size: 0.9rem;
+  }
+}
+/* ===== Responsive Fix for Add Recipe Page ===== */
+
+/* Mobile (≤ 767px): Stack sidebar and form vertically */
+@media (max-width: 767px) {
+  /* Stack elements vertically */
+  .row {
+    flex-direction: column !important;
+  }
+
+  /* Sidebar full width on mobile */
+  aside.col-lg-3 {
+    width: 100% !important;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  /* Ensure form section takes full width */
+  main.col-lg-9 {
+    width: 100% !important;
+    max-width: 100%;
+  }
+
+  /* Sidebar box adjustments */
+  .sidebar,
+  .p-3.bg-light-mustard.rounded {
+    padding: 15px !important;
+    text-align: center;
+  }
+
+  .sidebar h3 {
+    font-size: 1.1rem;
+  }
+
+  /* Form adjustments */
+  form {
+    padding: 15px !important;
+  }
+
+  form label {
+    font-size: 0.95rem;
+  }
+
+  form input,
+  form textarea,
+  form select {
+    font-size: 0.9rem;
+  }
+
+  /* Buttons stack */
+  .btn-group {
+    flex-direction: column !important;
+    gap: 10px;
+  }
+
+  .btn-group .btn {
+    width: 100%;
+  }
+
+  /* Section spacing */
+  .section {
+    margin-top: 0;
+  }
+
+  /* Reduce navbar padding for small screens */
+  .navbar {
+    padding: 10px 15px !important;
+  }
+
+  /* Adjust logo */
+  .logo {
+    width: 45px;
+    height: 45px;
+  }
 }
 
-.gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.3s ease;
+/* Tablet (768px – 991px): Sidebar above form but balanced */
+@media (min-width: 768px) and (max-width: 991px) {
+  aside.col-lg-3 {
+    margin-bottom: 20px;
+  }
+
+  .btn-group .btn {
+    width: 48%;
+  }
 }
 
-.gallery-item:hover img {
-  transform: scale(1.08); /* эффект "приближения" */
-}
-
-/* overlay caption */
-.gallery-caption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(92, 64, 51, 0.8); /* тёмно-коричневый с прозрачностью */
-  color: var(--mustard);
-  text-align: center;
-  padding: 10px;
-  font-size: 1rem;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.gallery-item:hover .gallery-caption {
-  opacity: 1; /* показываем текст при наведении */
-}
